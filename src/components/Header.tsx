@@ -38,23 +38,6 @@ export default function Header() {
               Home
             </Link>
             <Link 
-              href="/how-it-works" 
-              className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
-                isActive('/how-it-works') 
-                  ? 'text-gray-900 bg-gray-50' 
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-              }`}
-            >
-              How it works
-            </Link>
-
-            <Link 
-              href="/#security" 
-              className="text-sm font-medium text-gray-600 hover:text-gray-900 px-3 py-2 rounded-lg hover:bg-gray-50 transition-colors"
-            >
-              Security
-            </Link>
-            <Link 
               href="/for-managers" 
               className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
                 isActive('/for-managers') 
@@ -65,16 +48,24 @@ export default function Header() {
               For managers
             </Link>
             <Link 
-              href="/#learn" 
-              className="text-sm font-medium text-gray-600 hover:text-gray-900 px-3 py-2 rounded-lg hover:bg-gray-50 transition-colors"
+              href="/how-it-works" 
+              className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
+                isActive('/how-it-works') 
+                  ? 'text-gray-900 bg-gray-50' 
+                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+              }`}
             >
-              Learn
+              How it works
             </Link>
             <Link 
-              href="/#faq" 
-              className="text-sm font-medium text-gray-600 hover:text-gray-900 px-3 py-2 rounded-lg hover:bg-gray-50 transition-colors"
+              href="/security" 
+              className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
+                isActive('/security') 
+                  ? 'text-gray-900 bg-gray-50' 
+                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+              }`}
             >
-              FAQ
+              Security
             </Link>
           </div>
 
@@ -115,25 +106,6 @@ export default function Header() {
                 Home
               </Link>
               <Link 
-                href="/how-it-works" 
-                className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
-                  isActive('/how-it-works') 
-                    ? 'text-gray-900 bg-gray-50' 
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                How it works
-              </Link>
-
-              <Link 
-                href="/#security" 
-                className="text-sm font-medium text-gray-600 hover:text-gray-900 px-3 py-2 rounded-lg hover:bg-gray-50 transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Security
-              </Link>
-              <Link 
                 href="/for-managers" 
                 className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
                   isActive('/for-managers') 
@@ -145,18 +117,26 @@ export default function Header() {
                 For managers
               </Link>
               <Link 
-                href="/#learn" 
-                className="text-sm font-medium text-gray-600 hover:text-gray-900 px-3 py-2 rounded-lg hover:bg-gray-50 transition-colors"
+                href="/how-it-works" 
+                className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
+                  isActive('/how-it-works') 
+                    ? 'text-gray-900 bg-gray-50' 
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Learn
+                How it works
               </Link>
               <Link 
-                href="/#faq" 
-                className="text-sm font-medium text-gray-600 hover:text-gray-900 px-3 py-2 rounded-lg hover:bg-gray-50 transition-colors"
+                href="/security" 
+                className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
+                  isActive('/security') 
+                    ? 'text-gray-900 bg-gray-50' 
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                FAQ
+                Security
               </Link>
             </div>
           </div>
