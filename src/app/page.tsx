@@ -289,10 +289,7 @@ export default function HomePage() {
       <section className="pt-24 pb-20 px-6">
         <div className="max-w-7xl mx-auto text-center">
           <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className="hero-badge mb-6">
-              <div className="w-2 h-2 bg-emerald-500 rounded-full mr-2"></div>
-              <span>Now accepting waitlist applications</span>
-            </div>
+
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6">
               Generate yield from crypto{' '}
@@ -300,7 +297,7 @@ export default function HomePage() {
             </h1>
             
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
-              Use your crypto as collateral to access curated RWA tokenization opportunities. 
+              Use your crypto as collateral to access curated investment opportunities. 
               KYC + wallet in minutes. Trade tokenized real world assets on a compliant marketplace.
             </p>
             
@@ -325,13 +322,25 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-4">
-              Trusted by institutional partners
+              Trusted by institutional investors
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-              <div className="text-2xl font-bold text-gray-400">BNY Mellon</div>
-              <div className="text-2xl font-bold text-gray-400">State Street</div>
-              <div className="text-2xl font-bold text-gray-400">Chainlink</div>
-              <div className="text-2xl font-bold text-gray-400">Circle</div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+              <div className="text-center">
+                <div className="text-lg font-semibold text-gray-700 mb-1">Marathon Asset Management</div>
+                <div className="text-sm text-gray-500">$12.4B AUM</div>
+              </div>
+              <div className="text-center">
+                <div className="text-lg font-semibold text-gray-700 mb-1">Graphene Capital Management</div>
+                <div className="text-sm text-gray-500">$8.7B AUM</div>
+              </div>
+              <div className="text-center">
+                <div className="text-lg font-semibold text-gray-700 mb-1">Meridian Ventures</div>
+                <div className="text-sm text-gray-500">$3.2B AUM</div>
+              </div>
+              <div className="text-center">
+                <div className="text-lg font-semibold text-gray-700 mb-1">Apex CLO Equity Fund</div>
+                <div className="text-sm text-gray-500">$5.8B AUM</div>
+              </div>
             </div>
           </div>
         </div>

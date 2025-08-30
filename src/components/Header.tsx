@@ -47,16 +47,7 @@ export default function Header() {
             >
               How it works
             </Link>
-            <Link 
-              href="/marketplace" 
-              className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
-                isActive('/marketplace') 
-                  ? 'text-gray-900 bg-gray-50' 
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-              }`}
-            >
-              Marketplace
-            </Link>
+
             <Link 
               href="/#security" 
               className="text-sm font-medium text-gray-600 hover:text-gray-900 px-3 py-2 rounded-lg hover:bg-gray-50 transition-colors"
@@ -130,17 +121,7 @@ export default function Header() {
               >
                 How it works
               </Link>
-              <Link 
-                href="/marketplace" 
-                className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
-                  isActive('/marketplace') 
-                    ? 'text-gray-900 bg-gray-50' 
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Marketplace
-              </Link>
+
               <Link 
                 href="/#security" 
                 className="text-sm font-medium text-gray-600 hover:text-gray-900 px-3 py-2 rounded-lg hover:bg-gray-50 transition-colors"
