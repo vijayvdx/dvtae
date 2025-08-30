@@ -1,103 +1,143 @@
-import Image from "next/image";
+'use client'
 
-export default function Home() {
+import Link from 'next/link'
+import { useState, useEffect } from 'react'
+
+
+
+export default function HomePage() {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      {/* Hero Section */}
+      <section className="pt-24 pb-20 px-6">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className="hero-badge mb-6">
+              <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+              <span>Now accepting waitlist applications</span>
+            </div>
+            
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6">
+              Generate yield from crypto{' '}
+              <span className="text-indigo-600">without selling</span>
+            </h1>
+            
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
+              Use your crypto as collateral to access curated, tokenized real-world investments. 
+              KYC + wallet in minutes. Trade positions on a compliant marketplace.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+              <Link href="/waitlist" className="btn btn-primary btn-lg">
+                Join the waitlist
+              </Link>
+              <Link href="/how-it-works" className="btn btn-secondary">
+                Learn how it works
+              </Link>
+            </div>
+            
+            <p className="text-sm text-gray-500">
+              Regulated • Compliant • Institutional-grade
+            </p>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </section>
+
+      {/* Trust Indicators */}
+      <section className="py-16 px-6 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-4">
+              Trusted by institutional partners
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+              <div className="text-2xl font-bold text-gray-400">BNY Mellon</div>
+              <div className="text-2xl font-bold text-gray-400">State Street</div>
+              <div className="text-2xl font-bold text-gray-400">Chainlink</div>
+              <div className="text-2xl font-bold text-gray-400">Circle</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              How it works
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Three simple steps to start generating yield from your crypto holdings
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="step-card">
+              <div className="step-number">1</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4 pt-2">
+                Connect & Verify
+              </h3>
+              <p className="text-gray-600">
+                Link your wallet and complete KYC/AML to unlock investing.
+              </p>
+            </div>
+            
+            <div className="step-card">
+              <div className="step-number">2</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4 pt-2">
+                Pledge or Fund
+              </h3>
+              <p className="text-gray-600">
+                Use crypto as collateral (with institutional leverage typically{' '}
+                <strong>70–100%</strong> of the deposited value) or deposit cash/stablecoins.
+              </p>
+            </div>
+            
+            <div className="step-card">
+              <div className="step-number">3</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4 pt-2">
+                Invest & Trade
+              </h3>
+              <p className="text-gray-600">
+                Buy compliant ERC-1400 tokens and access peer-to-peer liquidity with 
+                AI-assisted pricing and on-chain records.
+              </p>
+            </div>
+          </div>
+          
+          <div className="text-center mt-12">
+            <Link href="/how-it-works" className="btn btn-primary">
+              Learn more about the process
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 px-6 bg-indigo-600">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-white mb-6">
+            Ready to unlock yield from your crypto?
+          </h2>
+          <p className="text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">
+            Join the waitlist to be among the first to access tokenized real-world investments 
+            using your crypto as collateral.
+          </p>
+          <Link href="/waitlist" className="bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-50 transition-colors inline-flex items-center gap-2">
+            Join the waitlist
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+        </div>
+      </section>
+    </>
+  )
 }

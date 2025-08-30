@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How it works — DvTae</title>
+  <meta name="description" content="Connect, verify, and fund with crypto collateral or cash. Access tokenized investments with 70-100% leverage, ERC-1400 tokens, and P2P trading on a compliant marketplace." />
+  <link rel="canonical" href="https://dvtae.vercel.app/how-it-works" />
+  <meta name="theme-color" content="#635bff" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3e%3crect width='32' height='32' rx='8' fill='%23635bff'/%3e%3ctext x='16' y='20' text-anchor='middle' fill='white' font-family='Inter' font-weight='700' font-size='14'%3eD%3c/text%3e%3c/svg%3e" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="How it works — DvTae" />
+  <meta property="og:description" content="Connect, verify, and fund with crypto collateral or cash. Access tokenized investments with 70-100% leverage, ERC-1400 tokens, and P2P trading." />
+  <meta property="og:image" content="https://dvtae.vercel.app/opengraph-image.png" />
+  <meta property="og:url" content="https://dvtae.vercel.app/how-it-works" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      /* Clean Color System - Inspired by Stripe & Circle */
+      --white: #ffffff;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+      
+      /* Brand Colors */
+      --primary: #635bff;
+      --primary-hover: #5a52e8;
+      --secondary: #00d4aa;
+      --secondary-hover: #00c199;
+      
+      /* Layout */
+      --max-width: 1200px;
+      --header-height: 80px;
+      
+      /* Typography */
+      --font-size-xs: 0.75rem;
+      --font-size-sm: 0.875rem;
+      --font-size-base: 1rem;
+      --font-size-lg: 1.125rem;
+      --font-size-xl: 1.25rem;
+      --font-size-2xl: 1.5rem;
+      --font-size-3xl: 1.875rem;
+      --font-size-4xl: 2.25rem;
+      --font-size-5xl: 3rem;
+      
+      /* Spacing */
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+      
+      /* Border Radius */
+      --radius: 8px;
+      --radius-lg: 12px;
+      --radius-full: 9999px;
+      
+      /* Shadows */
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      
+      /* Transitions */
+      --transition: all 0.15s ease;
+    }
+
+    /* Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+    }
+    
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: var(--font-size-base);
+      line-height: 1.5;
+      color: var(--gray-900);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0;
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--gray-900);
+    }
+    
+    h1 {
+      font-size: clamp(var(--font-size-3xl), 4vw, var(--font-size-5xl));
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+    
+    h2 {
+      font-size: clamp(var(--font-size-2xl), 3vw, var(--font-size-4xl));
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    
+    h3 {
+      font-size: var(--font-size-xl);
+      font-weight: 600;
+    }
+    
+    p {
+      margin: 0 0 var(--space-4) 0;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+    
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    a:hover {
+      color: var(--primary-hover);
+    }
+    
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    
+    /* Layout */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 var(--space-4);
+      }
+    }
+    
+    section {
+      padding: var(--space-20) 0;
+    }
+    
+    @media (max-width: 768px) {
+      section {
+        padding: var(--space-16) 0;
+      }
+    }
+
+    /* Header - Clean Stripe/Circle Style */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--gray-200);
+    }
+    
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: var(--header-height);
+    }
+    
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-weight: 600;
+      font-size: var(--font-size-lg);
+      color: var(--gray-900);
+      text-decoration: none;
+    }
+    
+    .logo {
+      width: 32px;
+      height: 32px;
+      background: var(--primary);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    
+    .navlinks {
+      display: flex;
+      gap: var(--space-8);
+      align-items: center;
+    }
+    
+    .navlinks a {
+      color: var(--gray-600);
+      font-weight: 500;
+      font-size: var(--font-size-sm);
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius);
+      transition: var(--transition);
+    }
+    
+    .navlinks a:hover,
+    .navlinks a[aria-current="page"] {
+      color: var(--gray-900);
+      background: var(--gray-50);
+    }
+    
+    .cta {
+      display: flex;
+      gap: var(--space-3);
+      align-items: center;
+    }
+    
+    .menu-toggle {
+      display: none;
+    }
+    
+    @media (max-width: 768px) {
+      .navlinks {
+        display: none;
+      }
+      
+      .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--gray-200);
+        background: var(--white);
+        border-radius: var(--radius);
+        cursor: pointer;
+      }
+    }
+
+    /* Buttons - Clean Stripe Style */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-6);
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: var(--font-size-sm);
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+    }
+    
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      border-color: var(--primary-hover);
+      color: var(--white);
+    }
+    
+    .btn-secondary {
+      background: var(--white);
+      color: var(--gray-700);
+      border-color: var(--gray-300);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--gray-50);
+      border-color: var(--gray-400);
+      color: var(--gray-900);
+    }
+    
+    .btn-ghost {
+      background: transparent;
+      color: var(--gray-600);
+      border-color: transparent;
+    }
+    
+    .btn-ghost:hover {
+      background: var(--gray-50);
+      color: var(--gray-900);
+    }
+    
+    .btn-lg {
+      padding: var(--space-4) var(--space-8);
+      font-size: var(--font-size-base);
+    }
+
+    /* Page Header */
+    .page-header {
+      text-align: center;
+      padding: var(--space-24) 0 var(--space-12) 0;
+    }
+    
+    .page-header h1 {
+      margin-bottom: var(--space-6);
+    }
+    
+    .page-subtitle {
+      font-size: var(--font-size-xl);
+      color: var(--gray-600);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Step Cards */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-8);
+      margin: var(--space-16) 0;
+    }
+    
+    .step-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+      transition: var(--transition);
+      position: relative;
+    }
+    
+    .step-card:hover {
+      border-color: var(--gray-300);
+      box-shadow: var(--shadow);
+    }
+    
+    .step-number {
+      position: absolute;
+      top: -12px;
+      left: var(--space-8);
+      width: 24px;
+      height: 24px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--font-size-sm);
+      font-weight: 600;
+    }
+    
+    .step-card h3 {
+      margin-bottom: var(--space-4);
+      padding-top: var(--space-2);
+    }
+    
+    .step-card p {
+      margin-bottom: 0;
+    }
+
+    /* Safety Rails */
+    .safety-section {
+      background: var(--gray-50);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+      margin: var(--space-16) 0;
+    }
+    
+    .safety-section h3 {
+      margin-bottom: var(--space-6);
+      text-align: center;
+    }
+    
+    .safety-list {
+      display: grid;
+      gap: var(--space-4);
+    }
+    
+    .safety-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+    }
+    
+    .safety-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--secondary);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    
+    .safety-item p {
+      margin: 0;
+      color: var(--gray-700);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      text-align: center;
+      padding: var(--space-16) 0;
+      background: var(--gray-50);
+      border-radius: var(--radius-lg);
+      margin: var(--space-16) 0;
+    }
+    
+    .cta-actions {
+      display: flex;
+      gap: var(--space-4);
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: var(--space-6);
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-2) var(--space-3);
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      font-size: var(--font-size-xs);
+      color: var(--gray-700);
+      font-weight: 500;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--gray-200);
+      padding: var(--space-16) 0;
+      margin-top: var(--space-24);
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr repeat(4, 1fr);
+      gap: var(--space-8);
+    }
+    
+    .footer-section h4 {
+      font-size: var(--font-size-sm);
+      font-weight: 600;
+      margin-bottom: var(--space-4);
+      color: var(--gray-900);
+    }
+    
+    .footer-section ul {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+    
+    .footer-section a {
+      color: var(--gray-600);
+      font-size: var(--font-size-sm);
+      transition: var(--transition);
+    }
+    
+    .footer-section a:hover {
+      color: var(--gray-900);
+    }
+    
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+    
+    .footer-description {
+      color: var(--gray-600);
+      font-size: var(--font-size-sm);
+      margin-bottom: var(--space-4);
+    }
+    
+    .footer-copyright {
+      color: var(--gray-500);
+      font-size: var(--font-size-sm);
+    }
+    
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+      }
+      
+      .cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="DvTae home">
+        <div class="logo">D</div>
+        <span>DvTae</span>
+      </a>
+      <nav class="navlinks" aria-label="Primary navigation">
+        <a href="/" aria-current="page">Home</a>
+        <a href="/how-it-works" aria-current="page">How it works</a>
+        <a href="/marketplace">Marketplace</a>
+        <a href="/#security">Security</a>
+        <a href="/#managers">For managers</a>
+        <a href="/#learn">Learn</a>
+        <a href="/#faq">FAQ</a>
+      </nav>
+      <div class="cta">
+        <a class="btn btn-primary" href="/waitlist">Join the waitlist</a>
+        <button class="menu-toggle" id="menuBtn" aria-expanded="false" aria-controls="mobileNav">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1>How it works</h1>
+        <p class="page-subtitle">
+          Connect, verify, and choose how to fund—pledge crypto or deposit cash—then allocate into tokenized offerings and trade positions on a compliant marketplace.
+        </p>
+      </div>
+    </section>
+
+    <!-- Steps -->
+    <section>
+      <div class="container">
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Connect & Verify</h3>
+            <p>Link your wallet and complete KYC/AML to unlock investing.</p>
+          </div>
+          
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Pledge or Fund</h3>
+            <p>Use crypto as collateral (with institutional leverage typically <strong>70–100%</strong> of the deposited value) or deposit cash/stablecoins.</p>
+          </div>
+          
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Invest & Trade</h3>
+            <p>Buy compliant ERC-1400 tokens and access peer-to-peer liquidity with AI-assisted pricing and on-chain records.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Safety Rails -->
+    <section>
+      <div class="container">
+        <div class="safety-section">
+          <h3>Built-in safety rails</h3>
+          <div class="safety-list">
+            <div class="safety-item">
+              <svg class="safety-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <p>Oracle-based monitoring, daily marks, and automated margin triggers.</p>
+            </div>
+            
+            <div class="safety-item">
+              <svg class="safety-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <p>Whitelist/KYC enforced on-chain; Reg D / Reg S rules embedded.</p>
+            </div>
+            
+            <div class="safety-item">
+              <svg class="safety-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <p>Secondary trading typically unlocks after 30 days (per token rules).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section>
+      <div class="container">
+        <div class="cta-section">
+          <h2>Ready to get started?</h2>
+          <p>Join the waitlist to be notified when we launch.</p>
+          <div class="cta-actions">
+            <a class="btn btn-primary btn-lg" href="/waitlist">Join the waitlist</a>
+            <a class="btn btn-secondary" href="/marketplace">Explore marketplace</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <div class="logo">D</div>
+            <span style="font-weight: 600;">DvTae</span>
+          </div>
+          <p class="footer-description">
+            Institutional rails for tokenized real-world assets.
+          </p>
+          <p class="footer-copyright">
+            © <span id="year">2025</span> DvTae. All rights reserved.
+          </p>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="/marketplace">Marketplace</a></li>
+            <li><a href="/how-it-works">How it works</a></li>
+            <li><a href="/#security">Security</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/about/team">Team</a></li>
+            <li><a href="/about/careers">Careers</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/legal/terms">Terms</a></li>
+            <li><a href="/legal/privacy">Privacy</a></li>
+            <li><a href="/legal/risk">Risk</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="/help">Help Center</a></li>
+            <li><a href="/status">Status</a></li>
+            <li><a href="/about/contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle (basic functionality)
+    const menuBtn = document.getElementById('menuBtn');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        // Add mobile menu functionality if needed
+        console.log('Mobile menu clicked');
+      });
+    }
+  </script>
+</body>
+</html>

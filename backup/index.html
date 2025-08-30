@@ -1,0 +1,1573 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DvTae — Generate yield from crypto without selling</title>
+  <meta name="description" content="Use your crypto as collateral to access curated, tokenized real-world investments. KYC + wallet in minutes. Trade positions on a compliant marketplace." />
+  <link rel="canonical" href="https://dvtae.vercel.app/" />
+  <meta name="theme-color" content="#0B0E13" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3e%3cdefs%3e%3clinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3e%3cstop offset='0%25' stop-color='%234BE1C3'/%3e%3cstop offset='100%25' stop-color='%238B78FF'/%3e%3c/linearGradient%3e%3c/defs%3e%3crect width='32' height='32' rx='8' fill='url(%23g)'/%3e%3c/svg%3e" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="DvTae — Generate yield from crypto without selling" />
+  <meta property="og:description" content="Use your crypto as collateral to access curated, tokenized real-world investments. KYC + wallet in minutes. Trade positions on a compliant marketplace." />
+  <meta property="og:image" content="https://dvtae.vercel.app/opengraph-image.png" />
+  <meta property="og:url" content="https://dvtae.vercel.app/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      /* Clean Color System - Inspired by Stripe & Circle */
+      --white: #ffffff;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+      
+      /* Brand Colors */
+      --primary: #635bff;
+      --primary-hover: #5a52e8;
+      --secondary: #00d4aa;
+      --secondary-hover: #00c199;
+      
+      /* Layout */
+      --max-width: 1200px;
+      --header-height: 80px;
+      
+      /* Typography */
+      --font-size-xs: 0.75rem;
+      --font-size-sm: 0.875rem;
+      --font-size-base: 1rem;
+      --font-size-lg: 1.125rem;
+      --font-size-xl: 1.25rem;
+      --font-size-2xl: 1.5rem;
+      --font-size-3xl: 1.875rem;
+      --font-size-4xl: 2.25rem;
+      --font-size-5xl: 3rem;
+      
+      /* Spacing */
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+      
+      /* Border Radius */
+      --radius: 8px;
+      --radius-lg: 12px;
+      --radius-full: 9999px;
+      
+      /* Shadows */
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      
+      /* Transitions */
+      --transition: all 0.15s ease;
+    }
+    /* Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+    }
+    
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: var(--font-size-base);
+      line-height: 1.5;
+      color: var(--gray-900);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0;
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--gray-900);
+    }
+    
+    h1 {
+      font-size: clamp(var(--font-size-3xl), 4vw, var(--font-size-5xl));
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+    
+    h2 {
+      font-size: clamp(var(--font-size-2xl), 3vw, var(--font-size-4xl));
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    
+    h3 {
+      font-size: var(--font-size-xl);
+      font-weight: 600;
+    }
+    
+    p {
+      margin: 0 0 var(--space-4) 0;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+    
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    a:hover {
+      color: var(--primary-hover);
+    }
+    
+    /* Layout */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 var(--space-4);
+      }
+    }
+    
+    section {
+      padding: var(--space-20) 0;
+    }
+    
+    @media (max-width: 768px) {
+      section {
+        padding: var(--space-16) 0;
+      }
+    }
+
+        /* Header - Clean Stripe/Circle Style */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--gray-200);
+    }
+    
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: var(--header-height);
+    }
+    
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-weight: 600;
+      font-size: var(--font-size-lg);
+      color: var(--gray-900);
+      text-decoration: none;
+    }
+    
+    .logo {
+      width: 32px;
+      height: 32px;
+      background: var(--primary);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    
+    .navlinks {
+      display: flex;
+      gap: var(--space-8);
+      align-items: center;
+    }
+    
+    .navlinks a {
+      color: var(--gray-600);
+      font-weight: 500;
+      font-size: var(--font-size-sm);
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius);
+      transition: var(--transition);
+    }
+    
+    .navlinks a:hover {
+      color: var(--gray-900);
+      background: var(--gray-50);
+    }
+    
+    .cta {
+      display: flex;
+      gap: var(--space-3);
+      align-items: center;
+    }
+    
+    .menu-toggle {
+      display: none;
+    }
+    
+    @media (max-width: 768px) {
+      .navlinks {
+        display: none;
+      }
+      
+      .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--gray-200);
+        background: var(--white);
+        border-radius: var(--radius);
+        cursor: pointer;
+      }
+    }
+    /* Buttons - Clean Stripe Style */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-6);
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: var(--font-size-sm);
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+    }
+    
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      border-color: var(--primary-hover);
+      color: var(--white);
+    }
+    
+    .btn-secondary {
+      background: var(--white);
+      color: var(--gray-700);
+      border-color: var(--gray-300);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--gray-50);
+      border-color: var(--gray-400);
+      color: var(--gray-900);
+    }
+    
+    .btn-ghost {
+      background: transparent;
+      color: var(--gray-600);
+      border-color: transparent;
+    }
+    
+    .btn-ghost:hover {
+      background: var(--gray-50);
+      color: var(--gray-900);
+    }
+    
+    .btn-lg {
+      padding: var(--space-4) var(--space-8);
+      font-size: var(--font-size-base);
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-2) var(--space-3);
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      font-size: var(--font-size-xs);
+      color: var(--gray-700);
+      font-weight: 500;
+    }
+
+    /* Hero - Clean Minimal Style */
+    .hero {
+      padding: var(--space-24) 0;
+      text-align: center;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-2) var(--space-4);
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-sm);
+      color: var(--gray-700);
+      margin-bottom: var(--space-8);
+    }
+    
+    .hero-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--secondary);
+      border-radius: 50%;
+    }
+    
+    .hero h1 {
+      margin-bottom: var(--space-6);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .hero-subtitle {
+      font-size: var(--font-size-xl);
+      color: var(--gray-600);
+      margin-bottom: var(--space-8);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .hero-actions {
+      display: flex;
+      gap: var(--space-4);
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: var(--space-12);
+    }
+    
+    .hero-visual {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: var(--space-12);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-visual::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(99, 91, 255, 0.05) 0%, rgba(0, 212, 170, 0.05) 100%);
+      pointer-events: none;
+    }
+    
+    .legal-notice {
+      font-size: var(--font-size-sm);
+      color: var(--gray-500);
+      margin-top: var(--space-4);
+    }
+    
+    @media (max-width: 768px) {
+      .hero {
+        padding: var(--space-16) 0;
+        text-align: center;
+      }
+      
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .hero-visual {
+        padding: var(--space-6);
+      }
+    }
+
+    /* Clean FAQ Styling */
+    .faq-section {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: var(--space-6) 0;
+      background: none;
+      border: none;
+      text-align: left;
+      font-size: var(--font-size-lg);
+      font-weight: 600;
+      color: var(--gray-900);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: var(--transition);
+    }
+
+    .faq-question:hover {
+      color: var(--primary);
+    }
+
+    .faq-icon {
+      width: 20px;
+      height: 20px;
+      transition: var(--transition);
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      padding: 0 0 var(--space-6) 0;
+      color: var(--gray-600);
+      line-height: 1.6;
+      display: none;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* Cards for sections */
+    .section-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-6);
+      margin-top: var(--space-8);
+    }
+
+    .section-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      transition: var(--transition);
+    }
+
+    .section-card:hover {
+      border-color: var(--gray-300);
+      box-shadow: var(--shadow);
+    }
+
+    .section-card h3 {
+      margin-bottom: var(--space-3);
+      color: var(--gray-900);
+    }
+
+    .section-card p {
+      color: var(--gray-600);
+      margin-bottom: var(--space-4);
+    }
+
+    /* Trust section */
+    .trust-section {
+      text-align: center;
+      padding: var(--space-16) 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .trust-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-8);
+      flex-wrap: wrap;
+      margin-top: var(--space-8);
+    }
+
+    .trust-logo {
+      padding: var(--space-3) var(--space-6);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      color: var(--gray-500);
+      font-size: var(--font-size-sm);
+      font-weight: 500;
+    }
+
+    /* Trust bar */
+    .trust { padding: 18px 0 54px; border-bottom: 1px solid var(--line); }
+    .trust ul { display:flex; gap:24px; flex-wrap: wrap; align-items:center; justify-content:flex-start; padding:0; margin: 10px 0 0; list-style:none; }
+    .trust .logo-box { width: 140px; height: 38px; border-radius: 10px; border:1px dashed #283148; color:#7f8aa2; display:flex; align-items:center; justify-content:center; font-size:.85rem; }
+
+    /* Sections */
+    section { padding: 64px 0; }
+    .cards { display:grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .card { 
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)); 
+      border:1px solid var(--line); 
+      border-radius: var(--radius); 
+      padding: 24px; 
+      box-shadow: var(--shadow); 
+      backdrop-filter: blur(10px);
+      transition: var(--transition);
+      position: relative;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(75,225,195,.3);
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(75,225,195,.03), transparent 50%, rgba(139,120,255,.02));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    .card:hover::before {
+      opacity: 1;
+    }
+    .card h3 { margin-top: 6px; }
+    .icon { width: 28px; height: 28px; border-radius: 8px; display:inline-grid; place-items:center; background:#0f1420; border:1px solid #283148; }
+
+    /* Featured strategies */
+    .cards-4 { display:grid; grid-template-columns: repeat(4, 1fr); gap:20px; }
+    .badge { display:inline-flex; gap:8px; align-items:center; padding:4px 10px; border-radius:999px; border:1px solid #283148; color:#B7C0D1; font-size:.8rem; }
+
+    /* Why row */
+    .why { display:grid; grid-template-columns: repeat(4, 1fr); gap:20px; }
+
+    /* Marketplace teaser */
+    .market-grid { display:grid; grid-template-columns: 1.2fr .8fr; gap:20px; }
+    .status { display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; background: rgba(49,208,170,.16); color:#8ef0d8; border:1px solid #2a564e; font-size:.85rem; }
+
+    /* Security checklist */
+    .checklist { display:grid; grid-template-columns: repeat(2, 1fr); gap: 16px 24px; margin-top: 10px; }
+    .check { display:flex; gap:12px; align-items:flex-start; }
+    .check svg { flex: 0 0 20px; }
+
+    /* CTA band */
+    .band { background: linear-gradient(180deg, rgba(139,120,255,.14), rgba(139,120,255,.06)); border:1px solid #2a2550; border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow); }
+
+    /* Learn tiles */
+    .learn { display:grid; grid-template-columns: repeat(3, 1fr); gap:20px; }
+
+    /* FAQ */
+    details { background: #0f1420; border:1px solid #283148; border-radius: 12px; padding: 14px 16px; }
+    details + details { margin-top: 10px; }
+    summary { cursor: pointer; font-weight:600; }
+    summary::-webkit-details-marker { display:none; }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--line); padding: 48px 0; }
+    .foot { display:grid; grid-template-columns: 2fr repeat(4, 1fr); gap:20px; }
+    .muted { color: var(--muted); }
+
+    /* Utilities */
+    .mt-1{ margin-top: 6px; } .mt-2{ margin-top: 10px; } .mt-3{ margin-top: 16px; } .mt-4{ margin-top: 20px; }
+    .mb-0{ margin-bottom:0; } .center { text-align:center; }
+
+    @media (max-width: 1024px) {
+      .hero-wrap { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr 1fr; }
+      .cards-4 { grid-template-columns: 1fr 1fr; }
+      .why { grid-template-columns: 1fr 1fr; }
+      .market-grid { grid-template-columns: 1fr; }
+      .foot { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 680px) {
+      .navlinks { display:none; }
+      .menu { display:inline-flex; }
+      .cards { grid-template-columns: 1fr; }
+      .cards-4 { grid-template-columns: 1fr; }
+      .why { grid-template-columns: 1fr; }
+      .learn { grid-template-columns: 1fr; }
+      .foot { grid-template-columns: 1fr; }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.1); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes draw {
+      to { stroke-dashoffset: 0; }
+    }
+
+    .chart-line {
+      animation: draw 3s ease-in-out forwards;
+    }
+
+    .chart-area {
+      opacity: 0;
+      animation: fadeInUp 2s ease-in-out 1.5s forwards;
+    }
+
+    .pulse-point {
+      animation: pulse 2s infinite;
+    }
+
+    .float-1 { animation: float 6s ease-in-out infinite; }
+    .float-2 { animation: float 8s ease-in-out infinite 2s; }
+    .float-3 { animation: float 7s ease-in-out infinite 4s; }
+
+    .fade-in {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    /* Intersection Observer classes */
+    .observe {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .observe.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Enhanced hover effects */
+    .trust ul li:hover {
+      transform: translateY(-2px);
+      border-color: rgba(75,225,195,.3);
+      color: var(--accent);
+      transition: var(--transition);
+    }
+
+    .badge:hover {
+      background: rgba(75,225,195,.1);
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+      transition: var(--transition);
+    }
+
+    .chip:hover {
+      background: rgba(75,225,195,.1);
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+      transition: var(--transition);
+    }
+
+    /* Loading placeholder shimmer */
+    @keyframes shimmer {
+      0% { background-position: -200px 0; }
+      100% { background-position: calc(200px + 100%) 0; }
+    }
+
+    .shimmer {
+      background: linear-gradient(
+        90deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.05) 20%,
+        rgba(255,255,255,0.1) 60%,
+        rgba(255,255,255,0) 100%
+      );
+      background-size: 200px 100%;
+      animation: shimmer 2s infinite;
+    }
+
+    /* Enhanced card animations */
+    @keyframes cardSlideUp {
+      from { 
+        opacity: 0; 
+        transform: translateY(40px) scale(0.95); 
+      }
+      to { 
+        opacity: 1; 
+        transform: translateY(0) scale(1); 
+      }
+    }
+
+    @keyframes cardSlideLeft {
+      from { 
+        opacity: 0; 
+        transform: translateX(-40px) scale(0.95); 
+      }
+      to { 
+        opacity: 1; 
+        transform: translateX(0) scale(1); 
+      }
+    }
+
+    @keyframes cardSlideRight {
+      from { 
+        opacity: 0; 
+        transform: translateX(40px) scale(0.95); 
+      }
+      to { 
+        opacity: 1; 
+        transform: translateX(0) scale(1); 
+      }
+    }
+
+    @keyframes bounceIn {
+      0% { 
+        opacity: 0; 
+        transform: scale(0.3) translateY(30px); 
+      }
+      50% { 
+        opacity: 1; 
+        transform: scale(1.05) translateY(-10px); 
+      }
+      70% { 
+        transform: scale(0.95) translateY(5px); 
+      }
+      100% { 
+        opacity: 1; 
+        transform: scale(1) translateY(0); 
+      }
+    }
+
+    @keyframes slideInFromBottom {
+      from { 
+        opacity: 0; 
+        transform: translateY(100px); 
+      }
+      to { 
+        opacity: 1; 
+        transform: translateY(0); 
+      }
+    }
+
+    @keyframes typewriter {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    /* Animation classes */
+    .animate-slide-up {
+      animation: cardSlideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .animate-slide-left {
+      animation: cardSlideLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .animate-slide-right {
+      animation: cardSlideRight 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .animate-bounce-in {
+      animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    }
+
+    .animate-slide-bottom {
+      animation: slideInFromBottom 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    /* Typewriter effect for hero */
+    .typewriter {
+      overflow: hidden;
+      border-right: 2px solid var(--accent);
+      white-space: nowrap;
+      animation: typewriter 3s steps(40, end), blink 0.75s step-end infinite;
+    }
+
+    /* Staggered animations */
+    .stagger-1 { animation-delay: 0.1s; }
+    .stagger-2 { animation-delay: 0.2s; }
+    .stagger-3 { animation-delay: 0.3s; }
+    .stagger-4 { animation-delay: 0.4s; }
+    .stagger-5 { animation-delay: 0.5s; }
+
+    /* Loading skeleton */
+    .skeleton {
+      background: linear-gradient(
+        90deg,
+        rgba(255,255,255,0.05) 25%,
+        rgba(255,255,255,0.1) 50%,
+        rgba(255,255,255,0.05) 75%
+      );
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+      border-radius: 8px;
+    }
+
+    .skeleton-text {
+      height: 1em;
+      margin: 0.5em 0;
+    }
+
+    .skeleton-title {
+      height: 1.5em;
+      width: 60%;
+      margin: 0.5em 0;
+    }
+
+    .skeleton-button {
+      height: 40px;
+      width: 120px;
+      border-radius: 12px;
+    }
+
+    /* Micro-interactions */
+    .btn {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .btn:active::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    /* Scroll progress indicator */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      z-index: 1000;
+      transition: width 0.1s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="DvTae home">
+        <div class="logo">D</div>
+        <span>DvTae</span>
+      </a>
+      <nav class="navlinks" aria-label="Primary navigation">
+        <a href="#how">How it works</a>
+        <a href="#strategies">Marketplace</a>
+        <a href="#security">Security</a>
+        <a href="#managers">For managers</a>
+        <a href="#learn">Learn</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="cta">
+        <a class="btn btn-primary" href="/waitlist">Join the waitlist</a>
+        <button class="menu-toggle" id="menuBtn" aria-expanded="false" aria-controls="mobileNav">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            Alternative wealth for digital assets
+          </div>
+          <h1 id="hero-title">
+            Generate yield from crypto—without selling
+          </h1>
+          <p class="hero-subtitle">
+            Pledge crypto or deposit cash, access curated tokenized investments, and trade positions on a compliant marketplace—while retaining your upside.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="/waitlist">Join the waitlist</a>
+            <a class="btn btn-secondary" href="#strategies">Explore marketplace</a>
+          </div>
+          <div class="legal-notice">
+            Capital at risk. Target yields not guaranteed. Eligibility applies.
+          </div>
+        </div>
+        <div class="hero-visual">
+          <!-- Clean, minimal dashboard mockup -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; height: 300px;">
+            <!-- Portfolio Overview -->
+            <div style="background: white; border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 24px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                <h3 style="font-size: 14px; font-weight: 600; color: var(--gray-900); margin: 0;">Portfolio</h3>
+                <span style="font-size: 12px; color: var(--gray-500);">+12.5%</span>
+              </div>
+              <div style="font-size: 24px; font-weight: 700; color: var(--gray-900); margin-bottom: 8px;">$2.4M</div>
+              <div style="height: 80px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); border-radius: 4px; opacity: 0.1;"></div>
+            </div>
+            
+            <!-- Active Positions -->
+            <div style="background: white; border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 24px;">
+              <h3 style="font-size: 14px; font-weight: 600; color: var(--gray-900); margin: 0 0 16px 0;">Active Positions</h3>
+              <div style="display: flex; flex-direction: column; gap: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 12px; color: var(--gray-600);">Private Credit</span>
+                  <span style="font-size: 12px; font-weight: 500; color: var(--gray-900);">$850K</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 12px; color: var(--gray-600);">Real Estate</span>
+                  <span style="font-size: 12px; font-weight: 500; color: var(--gray-900);">$650K</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 12px; color: var(--gray-600);">Structured Credit</span>
+                  <span style="font-size: 12px; font-weight: 500; color: var(--gray-900);">$420K</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust bar -->
+    <div class="trust" aria-label="Trust logos">
+      <div class="container">
+        <div class="muted">Built with institutional rails</div>
+        <ul>
+          <li class="logo-box" aria-label="Multi-sig custody">Custody</li>
+          <li class="logo-box" aria-label="Oracle feeds">Oracles</li>
+          <li class="logo-box" aria-label="Compliance">Compliance</li>
+          <li class="logo-box" aria-label="Transfer agent">Transfer Agent</li>
+          <li class="logo-box" aria-label="Audits">Audits</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- How it Works -->
+    <section id="how" aria-labelledby="how-title">
+      <div class="container">
+        <div class="observe">
+          <h2 id="how-title">How it works</h2>
+          <p class="subhead center">Simple steps to unlock yield from your crypto portfolio</p>
+        </div>
+        <div class="cards observe">
+          <div class="card">
+            <div class="icon" aria-hidden="true">🔐</div>
+            <h3>Connect &amp; Verify</h3>
+            <p class="mb-0">Link your wallet and complete KYC/AML. Eligible investors can proceed to funding.</p>
+            <p class="mt-2"><a href="/how-it-works/wallet-and-kyc">Learn more →</a></p>
+          </div>
+          <div class="card">
+            <div class="icon" aria-hidden="true">💳</div>
+            <h3>Pledge or Fund</h3>
+            <p class="mb-0">Deposit crypto, stablecoins, or cash. Your crypto can secure 70–100% financing via institutional lenders.</p>
+            <p class="mt-2"><a href="/how-it-works/pledge-crypto">Learn more →</a></p>
+          </div>
+          <div class="card">
+            <div class="icon" aria-hidden="true">📈</div>
+            <h3>Invest &amp; Trade</h3>
+            <p class="mb-0">Allocate into tokenized offerings and access a P2P marketplace with AI‑assisted pricing and on‑chain records.</p>
+            <p class="mt-2"><a href="/how-it-works/invest-and-trade">Learn more →</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Strategies -->
+    <section id="strategies" aria-labelledby="strategies-title">
+      <div class="container">
+        <div class="observe">
+          <h2 id="strategies-title">Featured strategies</h2>
+          <p class="subhead center">Diversified real-world assets with institutional backing</p>
+        </div>
+        <div class="cards-4 observe">
+          <article class="card">
+            <h3>Private Credit</h3>
+            <p>Direct lending, asset‑backed credit.</p>
+            <div class="mt-3">
+              <span class="badge">Target 7–17%</span>
+              <span class="badge">Lockup 30d–2y</span>
+              <span class="badge">Risk Low–Med</span>
+            </div>
+            <p class="mt-3"><a class="btn ghost" href="/marketplace/private-credit">View details</a></p>
+          </article>
+          <article class="card">
+            <h3>Real Estate</h3>
+            <p>Single‑family rentals, equity/home‑equity.</p>
+            <div class="mt-3">
+              <span class="badge">Target 12–17%</span>
+              <span class="badge">Lockup 2–3y</span>
+              <span class="badge">Risk Medium</span>
+            </div>
+            <p class="mt-3"><a class="btn ghost" href="/marketplace/real-estate">View details</a></p>
+          </article>
+          <article class="card">
+            <h3>Structured Credit</h3>
+            <p>Senior/mezz tranches, diversified pools.</p>
+            <div class="mt-3">
+              <span class="badge">Target 12–15%</span>
+              <span class="badge">Lockup 3–5y</span>
+              <span class="badge">Risk Medium</span>
+            </div>
+            <p class="mt-3"><a class="btn ghost" href="/marketplace/structured-credit">View details</a></p>
+          </article>
+          <article class="card">
+            <h3>Venture / PE</h3>
+            <p>Growth equity and buyout strategies.</p>
+            <div class="mt-3">
+              <span class="badge">Target 20%+</span>
+              <span class="badge">Lockup 3–5y</span>
+              <span class="badge">Risk High</span>
+            </div>
+            <p class="mt-3"><a class="btn ghost" href="/marketplace/interval-funds">View details</a></p>
+          </article>
+        </div>
+        <p class="muted mt-2">Target yields are illustrative and not guaranteed; availability and terms vary by offering.</p>
+      </div>
+    </section>
+
+    <!-- Why DvTae -->
+    <section aria-labelledby="why-title">
+      <div class="container">
+        <div class="observe">
+          <h2 id="why-title">Why DvTae</h2>
+          <p class="subhead center">Built for the next generation of digital wealth</p>
+        </div>
+        <div class="why observe">
+          <div class="card">
+            <h3>Liquidity</h3>
+            <p>Trade in and out of positions on‑platform when secondary liquidity is available.</p>
+          </div>
+          <div class="card">
+            <h3>Retain Crypto Upside</h3>
+            <p>Use crypto as collateral rather than selling, so you stay long while generating income.</p>
+          </div>
+          <div class="card">
+            <h3>Diversification</h3>
+            <p>Access high‑quality real‑world assets that don't move with crypto.</p>
+          </div>
+          <div class="card">
+            <h3>Yield Generation</h3>
+            <p>Curated, best‑in‑class investments within one platform.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marketplace & Pricing Teaser -->
+    <section aria-labelledby="market-title">
+      <div class="container">
+        <div class="market-grid">
+          <div class="card">
+            <h2 id="market-title">Live pricing &amp; trading, built in</h2>
+            <p class="mt-1">Our marketplace surfaces peer‑to‑peer liquidity with AI‑assisted price discovery and transparent on‑chain records.</p>
+            <ul class="mt-2">
+              <li>Indicative bids/asks published for discoverability.</li>
+              <li>P2P execution with smart‑contract settlement.</li>
+              <li>Ultra‑low fees with clear rules.</li>
+            </ul>
+            <p class="mt-3"><a class="btn btn-primary" href="/marketplace">Explore Marketplace</a></p>
+          </div>
+          <div class="card">
+            <div class="status">● Secondary market open</div>
+            <div class="mt-2">
+              <span class="badge" style="color: var(--gray-500); border-color: var(--gray-300);">Bid 99.2</span>
+              <span class="badge" style="color: var(--gray-500); border-color: var(--gray-300);">Ask 101.1</span>
+              <span class="badge" style="color: var(--gray-500); border-color: var(--gray-300);">Depth: Med</span>
+            </div>
+            <div class="mt-3" style="color: var(--gray-500); font-size: var(--font-size-sm);">Sample data for illustration only.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Security & Compliance -->
+    <section id="security" aria-labelledby="security-title">
+      <div class="container">
+        <h2 id="security-title">Institutional‑grade safeguards</h2>
+        <div class="checklist">
+          <div class="check"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18l-5-5" stroke="#31D0AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><div>Multi‑sig custody with third‑party audits</div></div>
+          <div class="check"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18l-5-5" stroke="#31D0AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><div>Oracle‑driven monitoring and automated margin calls</div></div>
+          <div class="check"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18l-5-5" stroke="#31D0AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><div>KYC/AML enforced with on‑chain whitelisting</div></div>
+          <div class="check"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18l-5-5" stroke="#31D0AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><div>ERC‑1400 tokens with transfer restrictions (Reg D / Reg S)</div></div>
+          <div class="check"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18l-5-5" stroke="#31D0AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><div>Secondary trading typically unlocks after 30 days</div></div>
+          <div class="check"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18l-5-5" stroke="#31D0AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><div>Segregated SPV assets; custodian/trustee oversight</div></div>
+        </div>
+        <p class="mt-3"><a class="btn ghost" href="/security">Read our Security brief →</a></p>
+      </div>
+    </section>
+
+    <!-- For Managers CTA -->
+    <section id="managers" aria-labelledby="managers-title">
+      <div class="container">
+        <div class="band">
+          <h2 id="managers-title">Tokenize, distribute, and service—on one platform</h2>
+          <p class="mt-1">Issue compliant tokens, gate with KYC, reach crypto‑native distribution, and get servicing &amp; analytics.</p>
+          <p class="mt-3"><a class="btn btn-primary" href="/for-managers/apply">Apply to List</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learn tiles -->
+    <section id="learn" aria-labelledby="learn-title">
+      <div class="container">
+        <div class="observe">
+          <h2 id="learn-title">Learn</h2>
+          <p class="subhead center">Master the fundamentals of tokenized real-world assets</p>
+        </div>
+        <div class="learn observe">
+          <article class="card">
+            <h3>RWA 101</h3>
+            <p>Tokenization, custody, and liquidity—explained.</p>
+            <p class="mt-3"><a class="btn ghost" href="/learn/rwa-101">Read guide</a></p>
+          </article>
+          <article class="card">
+            <h3>Collateral &amp; LTV</h3>
+            <p>How leverage against crypto works, risks, and triggers.</p>
+            <p class="mt-3"><a class="btn ghost" href="/learn/collateral-and-ltv">Read guide</a></p>
+          </article>
+          <article class="card">
+            <h3>Liquidity &amp; Secondary</h3>
+            <p>Understanding trading windows, unlocks, and fees.</p>
+            <p class="mt-3"><a class="btn ghost" href="/learn/liquidity-and-secondary">Read guide</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQs -->
+    <section id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <h2 id="faq-title" style="text-align: center; margin-bottom: var(--space-12);">Frequently asked questions</h2>
+        <div class="faq-section">
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              Is yield guaranteed?
+              <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>No. Target yields are illustrative and depend on the specific offering and market conditions.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              Do I have to sell my crypto?
+              <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>No—your crypto can be pledged as collateral so you retain upside; lenders typically provide 70–100% financing against it.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              Who can invest?
+              <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Eligibility and accreditation depend on your jurisdiction and offering type (e.g., Reg D / Reg S). Not all products are available in all locations.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              When can I trade my tokens?
+              <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Some offerings enable secondary trading after a 30‑day window; rules vary per token and jurisdiction.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              How are risks managed?
+              <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Multi‑sig custody, daily oracle marks, LTV triggers, and audited SPVs with custodian/trustee oversight.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Eligibility & Disclosures -->
+    <section aria-labelledby="disc-title">
+      <div class="container">
+        <h2 id="disc-title">Eligibility &amp; Disclosures</h2>
+        <p class="muted">Offerings may be limited to accredited or qualified investors and are not available in all jurisdictions.</p>
+        <p class="muted">Investing involves risk, including loss of principal. Past performance is not indicative of future results.</p>
+        <p class="muted">Secondary trading, when available, may be subject to a 30‑day unlock and other restrictions.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <div>
+        <div class="brand"><span class="logo" aria-hidden="true"></span><span>DvTae</span></div>
+        <p class="muted mt-2">Institutional rails for tokenized real‑world assets.</p>
+        <p class="muted">© <span id="year">2025</span> DvTae. All rights reserved.</p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <p class="mt-1"><a class="muted" href="#strategies">Marketplace</a></p>
+        <p><a class="muted" href="#how">How it Works</a></p>
+        <p><a class="muted" href="#security">Security</a></p>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <p class="mt-1"><a class="muted" href="/about">About</a></p>
+        <p><a class="muted" href="/about/team">Team</a></p>
+        <p><a class="muted" href="/about/careers">Careers</a></p>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <p class="mt-1"><a class="muted" href="/legal/terms">Terms</a></p>
+        <p><a class="muted" href="/legal/privacy">Privacy</a></p>
+        <p><a class="muted" href="/legal/risk">Risk</a></p>
+      </div>
+      <div>
+        <h3>Help</h3>
+        <p class="mt-1"><a class="muted" href="/help">Help Center</a></p>
+        <p><a class="muted" href="/status">Status</a></p>
+        <p><a class="muted" href="/about/contact">Contact</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    menuBtn?.addEventListener('click', () => {
+      const open = mobileNav.hasAttribute('hidden') ? false : true;
+      if (open) { mobileNav.setAttribute('hidden', ''); menuBtn.setAttribute('aria-expanded', 'false'); }
+      else { mobileNav.removeAttribute('hidden'); menuBtn.setAttribute('aria-expanded', 'true'); }
+    });
+
+    // Smooth in-page scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        if (id && id.length > 1) {
+          const target = document.querySelector(id);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+
+    // Current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // FAQ Toggle Function
+    function toggleFaq(button) {
+      const faqItem = button.parentElement;
+      const isActive = faqItem.classList.contains('active');
+      
+      // Close all FAQ items
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      
+      // Toggle current item
+      if (!isActive) {
+        faqItem.classList.add('active');
+      }
+    }
+
+    // Scroll progress indicator
+    function updateScrollProgress() {
+      const scrollProgress = document.getElementById('scrollProgress');
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrollPercentage = (scrollTop / scrollHeight) * 100;
+      scrollProgress.style.width = scrollPercentage + '%';
+    }
+
+    window.addEventListener('scroll', updateScrollProgress);
+
+    // Enhanced Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const animationClasses = ['animate-slide-up', 'animate-slide-left', 'animate-slide-right', 'animate-bounce-in'];
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          
+          // Apply different animations based on section
+          const sectionId = entry.target.closest('section')?.id;
+          let animationClass = 'animate-slide-up';
+          
+          switch(sectionId) {
+            case 'how':
+              animationClass = 'animate-bounce-in';
+              break;
+            case 'strategies':
+              animationClass = 'animate-slide-up';
+              break;
+            case 'learn':
+              animationClass = 'animate-slide-left';
+              break;
+            default:
+              animationClass = 'animate-slide-up';
+          }
+          
+          // Stagger animations for child elements
+          const cards = entry.target.querySelectorAll('.card');
+          cards.forEach((card, index) => {
+            setTimeout(() => {
+              card.classList.add(animationClass, `stagger-${Math.min(index + 1, 5)}`);
+            }, index * 150);
+          });
+
+          // Special handling for hero elements
+          if (entry.target.classList.contains('fade-in')) {
+            entry.target.style.animationDelay = '0.2s';
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with .observe class
+    document.querySelectorAll('.observe').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Enhanced hover effects for interactive elements
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-8px) scale(1.02)';
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+
+    // Smooth parallax effect for hero background
+    let ticking = false;
+    function updateParallax() {
+      const scrolled = window.pageYOffset;
+      const parallax = document.querySelector('.hero-art');
+      if (parallax) {
+        const speed = scrolled * 0.5;
+        parallax.style.transform = `translateY(${speed}px)`;
+      }
+      ticking = false;
+    }
+
+    function requestTick() {
+      if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', requestTick);
+
+    // Button ripple effect
+    document.querySelectorAll('.btn').forEach(button => {
+      button.addEventListener('click', function(e) {
+        const ripple = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        ripple.classList.add('ripple');
+        
+        this.appendChild(ripple);
+        
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
+    });
+
+    // Loading state simulation for demonstration
+    function showLoadingState() {
+      document.querySelectorAll('.card h3').forEach(title => {
+        const skeleton = document.createElement('div');
+        skeleton.className = 'skeleton skeleton-title';
+        title.style.display = 'none';
+        title.parentNode.insertBefore(skeleton, title);
+        
+        setTimeout(() => {
+          skeleton.remove();
+          title.style.display = 'block';
+          title.classList.add('animate-slide-up');
+        }, 1000 + Math.random() * 500);
+      });
+    }
+
+    // Trigger loading state on page load (for demo)
+    // showLoadingState();
+
+    // Enhanced keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Tab') {
+        document.body.classList.add('keyboard-navigation');
+      }
+    });
+
+    document.addEventListener('mousedown', function() {
+      document.body.classList.remove('keyboard-navigation');
+    });
+
+    // Performance optimization: throttle scroll events
+    let scrollTimeout;
+    function throttledScroll(callback, delay = 16) {
+      return function() {
+        if (scrollTimeout) return;
+        scrollTimeout = setTimeout(() => {
+          callback.apply(this, arguments);
+          scrollTimeout = null;
+        }, delay);
+      };
+    }
+
+    // Apply throttling to scroll handlers
+    window.addEventListener('scroll', throttledScroll(updateScrollProgress));
+    window.addEventListener('scroll', throttledScroll(requestTick));
+
+    // Prefers reduced motion support
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (prefersReducedMotion.matches) {
+      document.documentElement.style.setProperty('--transition', 'none');
+      document.querySelectorAll('[class*="animate"], [class*="float"], [class*="pulse"]').forEach(el => {
+        el.style.animation = 'none';
+      });
+      // Disable scroll progress for reduced motion users
+      document.getElementById('scrollProgress').style.display = 'none';
+    }
+
+    // Add CSS for ripple effect
+    const rippleStyles = `
+      .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.3);
+        transform: scale(0);
+        animation: ripple-animation 0.6s linear;
+        pointer-events: none;
+      }
+      
+      @keyframes ripple-animation {
+        to {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+      
+      .keyboard-navigation *:focus {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+    `;
+    
+    const styleSheet = document.createElement('style');
+    styleSheet.textContent = rippleStyles;
+    document.head.appendChild(styleSheet);
+  </script>
+
+  <!-- JSON-LD (Organization / FinancialService) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FinancialService",
+    "name": "DvTae",
+    "url": "https://dvtae.example/",
+    "description": "Use your crypto as collateral to access curated, tokenized real-world investments.",
+    "logo": "https://dvtae.example/opengraph-image.png",
+    "sameAs": [],
+    "areaServed": "Global"
+  }
+  </script>
+</body>
+</html>
