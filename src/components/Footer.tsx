@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-gray-200 mt-24">
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid gap-8">
+        <div className="grid md:grid-cols-5 gap-8">
           {/* Brand Section */}
           <div className="md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
@@ -15,8 +15,8 @@ export default function Footer() {
               </div>
               <span className="font-semibold text-gray-900">DvTae</span>
             </div>
-            <p className="text-sm text-gray-600 mb-4 max-w-sm">
-              Institutional rails for tokenized real-world assets.
+            <p className="text-sm text-gray-600 mb-6 max-w-sm">
+              Institutional rails for tokenized real-world assets. Generate yield from crypto without selling.
             </p>
             <p className="text-sm text-gray-500">
               © {currentYear} DvTae. All rights reserved.
@@ -26,20 +26,25 @@ export default function Footer() {
           {/* Product */}
           <div>
             <h4 className="text-sm font-semibold text-gray-900 mb-4">Product</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/marketplace" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  Marketplace
-                </Link>
-              </li>
+            <ul className="space-y-3">
               <li>
                 <Link href="/how-it-works" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
                   How it works
                 </Link>
               </li>
               <li>
-                <Link href="/#security" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                <Link href="/for-managers" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                  For managers
+                </Link>
+              </li>
+              <li>
+                <Link href="/security" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
                   Security
+                </Link>
+              </li>
+              <li>
+                <Link href="/waitlist" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                  Join waitlist
                 </Link>
               </li>
             </ul>
@@ -48,21 +53,26 @@ export default function Footer() {
           {/* Company */}
           <div>
             <h4 className="text-sm font-semibold text-gray-900 mb-4">Company</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               <li>
-                <Link href="/about" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  About
-                </Link>
+                <a href="mailto:hello@dvtae.com" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                  Contact
+                </a>
               </li>
               <li>
-                <Link href="/about/team" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  Team
-                </Link>
+                <a href="https://twitter.com/dvtae" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                  Twitter
+                </a>
               </li>
               <li>
-                <Link href="/about/careers" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  Careers
-                </Link>
+                <a href="https://linkedin.com/company/dvtae" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/dvtae" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                  GitHub
+                </a>
               </li>
             </ul>
           </div>
@@ -70,36 +80,31 @@ export default function Footer() {
           {/* Legal & Help */}
           <div>
             <h4 className="text-sm font-semibold text-gray-900 mb-4">Legal & Help</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               <li>
-                <Link href="/legal/terms" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  Terms
-                </Link>
+                <a href="/legal/terms" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                  Terms of Service
+                </a>
               </li>
               <li>
-                <Link href="/legal/privacy" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  Privacy
-                </Link>
+                <a href="/legal/privacy" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                  Privacy Policy
+                </a>
               </li>
               <li>
-                <Link href="/legal/risk" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  Risk
-                </Link>
+                <a href="/legal/risk" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                  Risk Disclosure
+                </a>
               </li>
               <li>
-                <Link href="/help" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  Help Center
-                </Link>
+                <a href="mailto:support@dvtae.com" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                  Support
+                </a>
               </li>
               <li>
-                <Link href="/status" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                <a href="https://status.dvtae.com" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
                   Status
-                </Link>
-              </li>
-              <li>
-                <Link href="/about/contact" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  Contact
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
