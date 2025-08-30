@@ -326,19 +326,19 @@ export default function HomePage() {
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
               <div className="text-center">
-                <div className="text-lg font-semibold text-gray-700 mb-1">Marathon Asset Management</div>
+                <div className="text-lg font-semibold text-gray-700 mb-1">Multi-Strategy Asset Manager</div>
                 <div className="text-sm text-gray-500">$12.4B AUM</div>
               </div>
               <div className="text-center">
-                <div className="text-lg font-semibold text-gray-700 mb-1">Graphene Capital Management</div>
+                <div className="text-lg font-semibold text-gray-700 mb-1">Global Credit Fund</div>
                 <div className="text-sm text-gray-500">$8.7B AUM</div>
               </div>
               <div className="text-center">
-                <div className="text-lg font-semibold text-gray-700 mb-1">Meridian Ventures</div>
+                <div className="text-lg font-semibold text-gray-700 mb-1">Venture Capital Fund</div>
                 <div className="text-sm text-gray-500">$3.2B AUM</div>
               </div>
               <div className="text-center">
-                <div className="text-lg font-semibold text-gray-700 mb-1">Apex CLO Equity Fund</div>
+                <div className="text-lg font-semibold text-gray-700 mb-1">CLO Equity Fund</div>
                 <div className="text-sm text-gray-500">$5.8B AUM</div>
               </div>
             </div>
