@@ -30,13 +30,13 @@ export default function WalletAndKYCPage() {
       {/* Content */}
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid gap-12">
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
                 Supported wallets
               </h2>
               <div className="space-y-4">
-                <div className="flex items-center gap-4 p-4 border border-gray-200 rounded-lg">
+                <div className="flex items-center space-x-4 p-4 border border-gray-200 rounded-lg">
                   <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
                     <span className="text-orange-600 font-bold">M</span>
                   </div>
@@ -46,7 +46,7 @@ export default function WalletAndKYCPage() {
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-4 p-4 border border-gray-200 rounded-lg">
+                <div className="flex items-center space-x-4 p-4 border border-gray-200 rounded-lg">
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
                     <span className="text-blue-600 font-bold">W</span>
                   </div>

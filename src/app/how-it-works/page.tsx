@@ -24,7 +24,7 @@ export default function HowItWorksPage() {
       {/* Steps */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid gap-8">
             <div className="step-card">
               <div className="step-number">1</div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4 pt-2">
@@ -81,7 +81,7 @@ export default function HowItWorksPage() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid gap-8">
             <div className="safety-item">
               <svg className="safety-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -161,7 +161,7 @@ export default function HowItWorksPage() {
             <p className="text-lg text-gray-600 mb-8">
               Join the waitlist to be notified when we launch.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row space-x-4 justify-center items-center">
               <Link href="/waitlist" className="btn btn-primary btn-lg">
                 Join the waitlist
               </Link>

@@ -31,7 +31,7 @@ export default function PledgeCryptoPage() {
       {/* Content */}
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid gap-12">
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
                 How collateral works
@@ -116,7 +116,7 @@ export default function PledgeCryptoPage() {
               Alternative: Direct cash funding
             </h2>
             <div className="bg-gray-50 p-8 rounded-xl">
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid gap-8">
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-4">Cash deposits</h3>
                   <p className="text-gray-600 mb-4">
@@ -124,15 +124,15 @@ export default function PledgeCryptoPage() {
                     to fund your investments.
                   </p>
                   <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="flex items-center gap-2">
+                    <li className="flex items-center space-x-2">
                       <div className="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div>
                       USD wire transfers
                     </li>
-                    <li className="flex items-center gap-2">
+                    <li className="flex items-center space-x-2">
                       <div className="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div>
                       USDC deposits
                     </li>
-                    <li className="flex items-center gap-2">
+                    <li className="flex items-center space-x-2">
                       <div className="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div>
                       Other approved stablecoins
                     </li>
@@ -142,19 +142,19 @@ export default function PledgeCryptoPage() {
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-4">Benefits</h3>
                   <ul className="space-y-3 text-gray-600">
-                    <li className="flex items-start gap-3">
+                    <li className="flex items-start space-x-3">
                       <svg className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       <span>No collateral risk</span>
                     </li>
-                    <li className="flex items-start gap-3">
+                    <li className="flex items-start space-x-3">
                       <svg className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       <span>No margin calls</span>
                     </li>
-                    <li className="flex items-start gap-3">
+                    <li className="flex items-start space-x-3">
                       <svg className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>

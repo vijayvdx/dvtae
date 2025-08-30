@@ -24,7 +24,7 @@ export default function MarketplacePage() {
       {/* Category Tiles */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid gap-6">
             <Link href="/marketplace/private-credit" className="card hover:border-indigo-300 transition-colors group">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
@@ -135,7 +135,7 @@ export default function MarketplacePage() {
       {/* Liquidity Info */}
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid gap-12 items-center">
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
                 AI-powered liquidity
@@ -145,7 +145,7 @@ export default function MarketplacePage() {
               </p>
               
               <div className="space-y-4">
-                <div className="flex items-start gap-3">
+                <div className="flex items-start space-x-3">
                   <svg className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
@@ -155,7 +155,7 @@ export default function MarketplacePage() {
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-3">
+                <div className="flex items-start space-x-3">
                   <svg className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
@@ -165,7 +165,7 @@ export default function MarketplacePage() {
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-3">
+                <div className="flex items-start space-x-3">
                   <svg className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
@@ -182,7 +182,7 @@ export default function MarketplacePage() {
               <div className="space-y-4">
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-sm font-medium text-gray-900">Asset</span>
-                  <div className="flex gap-4">
+                  <div className="flex space-x-4">
                     <span className="text-sm font-medium text-gray-900">Bid</span>
                     <span className="text-sm font-medium text-gray-900">Ask</span>
                   </div>
@@ -190,7 +190,7 @@ export default function MarketplacePage() {
                 
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-gray-600">Direct Lending 2025-1</span>
-                  <div className="flex gap-4">
+                  <div className="flex space-x-4">
                     <span className="badge" style={{color: 'rgb(107, 114, 128)', borderColor: 'rgb(209, 213, 219)'}}>99.2</span>
                     <span className="badge" style={{color: 'rgb(107, 114, 128)', borderColor: 'rgb(209, 213, 219)'}}>101.1</span>
                   </div>
@@ -198,7 +198,7 @@ export default function MarketplacePage() {
                 
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-gray-600">Real Estate Fund A</span>
-                  <div className="flex gap-4">
+                  <div className="flex space-x-4">
                     <span className="badge" style={{color: 'rgb(107, 114, 128)', borderColor: 'rgb(209, 213, 219)'}}>98.5</span>
                     <span className="badge" style={{color: 'rgb(107, 114, 128)', borderColor: 'rgb(209, 213, 219)'}}>102.3</span>
                   </div>
@@ -206,7 +206,7 @@ export default function MarketplacePage() {
                 
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-gray-600">Structured Credit B</span>
-                  <div className="flex gap-4">
+                  <div className="flex space-x-4">
                     <span className="badge" style={{color: 'rgb(107, 114, 128)', borderColor: 'rgb(209, 213, 219)'}}>97.8</span>
                     <span className="badge" style={{color: 'rgb(107, 114, 128)', borderColor: 'rgb(209, 213, 219)'}}>103.1</span>
                   </div>
@@ -239,7 +239,7 @@ export default function MarketplacePage() {
           <p className="text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">
             Join the waitlist to access tokenized real-world investments with institutional-grade security.
           </p>
-          <Link href="/waitlist" className="bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-50 transition-colors inline-flex items-center gap-2">
+          <Link href="/waitlist" className="bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-50 transition-colors inline-flex items-center space-x-2">
             Join the waitlist
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

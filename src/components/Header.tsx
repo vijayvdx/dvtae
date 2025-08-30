@@ -18,7 +18,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-6">
         <nav className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center gap-3 font-semibold text-lg text-gray-900 hover:text-gray-700 transition-colors">
+          <Link href="/" className="flex items-center space-x-3 font-semibold text-lg text-gray-900 hover:text-gray-700 transition-colors">
             <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
               D
             </div>
@@ -26,7 +26,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center space-x-8">
             <Link 
               href="/" 
               className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
@@ -83,7 +83,7 @@ export default function Header() {
             </Link>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center space-x-3">
             <Link 
               href="/waitlist" 
               className="bg-indigo-600 text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors"
@@ -107,7 +107,7 @@ export default function Header() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-200">
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col space-y-2">
               <Link 
                 href="/" 
                 className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
