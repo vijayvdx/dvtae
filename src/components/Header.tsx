@@ -55,8 +55,12 @@ export default function Header() {
               Security
             </Link>
             <Link 
-              href="/#managers" 
-              className="text-sm font-medium text-gray-600 hover:text-gray-900 px-3 py-2 rounded-lg hover:bg-gray-50 transition-colors"
+              href="/for-managers" 
+              className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
+                isActive('/for-managers') 
+                  ? 'text-gray-900 bg-gray-50' 
+                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+              }`}
             >
               For managers
             </Link>
@@ -130,8 +134,12 @@ export default function Header() {
                 Security
               </Link>
               <Link 
-                href="/#managers" 
-                className="text-sm font-medium text-gray-600 hover:text-gray-900 px-3 py-2 rounded-lg hover:bg-gray-50 transition-colors"
+                href="/for-managers" 
+                className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
+                  isActive('/for-managers') 
+                    ? 'text-gray-900 bg-gray-50' 
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 For managers
