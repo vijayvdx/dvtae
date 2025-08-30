@@ -322,7 +322,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-4">
-              Trusted by institutional investors
+              Trusted by institutional partners
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
               <div className="text-center">
