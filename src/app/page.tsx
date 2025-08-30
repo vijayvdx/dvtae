@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
 function HowItWorksSection() {
-  const [activeStep, setActiveStep] = useState<number | null>(null)
+  const [activeStep, setActiveStep] = useState<number>(1)
 
   const steps = [
     {
@@ -98,7 +98,7 @@ function HowItWorksSection() {
             How it works
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Three simple steps to start generating yield from your crypto holdings
+            Three simple steps to access tokenized RWA (real world assets) and start generating yield from your crypto holdings
           </p>
         </div>
         
@@ -152,73 +152,98 @@ function HowItWorksSection() {
             {/* Right Side - Content Area */}
             <div className="lg:col-span-7">
               <div className="lg:sticky lg:top-8">
-                {activeStep ? (
-                  <div className="animate-fadeIn">
-                    {/* Clean Header */}
-                    <div className="mb-8">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-6 h-6 bg-gray-900 text-white rounded-full flex items-center justify-center text-xs font-semibold">
-                          {activeStep}
-                        </div>
-                        <h3 className="text-2xl font-semibold text-gray-900">
-                          {steps.find(s => s.id === activeStep)?.title}
-                        </h3>
-                      </div>
-                      <div className="w-16 h-px bg-gray-900"></div>
-                    </div>
-
-                    {/* Description */}
-                    <div className="mb-10">
-                      <p className="text-gray-700 leading-relaxed text-lg">
-                        {steps.find(s => s.id === activeStep)?.details.description}
-                      </p>
-                    </div>
-
-                    {/* Features - Clean List */}
-                    <div className="space-y-10">
-                      {steps.find(s => s.id === activeStep)?.details.features.map((feature, index) => (
-                        <div key={index}>
-                          <h4 className="font-semibold text-gray-900 mb-4">
-                            {feature.title}
-                          </h4>
-                          <div className="space-y-3">
-                            {feature.items.map((item, itemIndex) => (
-                              <div key={itemIndex} className="flex items-start gap-3">
-                                <div className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0 mt-2.5"></div>
-                                <p className="text-gray-600 leading-relaxed">
-                                  {item}
-                                </p>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
+                <div className="animate-fadeIn">
+                  {/* Navigation arrows at top */}
+                  <div className="flex justify-between items-center mb-8">
+                    <button
+                      onClick={() => setActiveStep(Math.max(1, activeStep - 1))}
+                      disabled={activeStep === 1}
+                      className={`p-2 rounded-full transition-colors ${
+                        activeStep === 1 
+                          ? 'text-gray-300 cursor-not-allowed' 
+                          : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                      }`}
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                    </button>
+                    
+                    <div className="flex items-center gap-2">
+                      {steps.map((step) => (
+                        <button
+                          key={step.id}
+                          onClick={() => setActiveStep(step.id)}
+                          className={`w-2 h-2 rounded-full transition-colors ${
+                            activeStep === step.id ? 'bg-gray-900' : 'bg-gray-300 hover:bg-gray-400'
+                          }`}
+                        />
                       ))}
                     </div>
+                    
+                    <button
+                      onClick={() => setActiveStep(Math.min(steps.length, activeStep + 1))}
+                      disabled={activeStep === steps.length}
+                      className={`p-2 rounded-full transition-colors ${
+                        activeStep === steps.length 
+                          ? 'text-gray-300 cursor-not-allowed' 
+                          : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                      }`}
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </div>
 
-                    {/* Simple Note */}
-                    <div className="mt-10 pt-6 border-t border-gray-200">
-                      <p className="text-sm text-gray-600 leading-relaxed">
-                        <span className="font-medium text-gray-900">Note:</span> {steps.find(s => s.id === activeStep)?.details.highlight}
-                      </p>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="flex items-center justify-center py-20">
-                    <div className="text-center">
-                      <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
-                        </svg>
+                  {/* Clean Header */}
+                  <div className="mb-8">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-6 h-6 bg-gray-900 text-white rounded-full flex items-center justify-center text-xs font-semibold">
+                        {activeStep}
                       </div>
-                      <h3 className="text-lg font-medium text-gray-900 mb-2">
-                        Select a step
+                      <h3 className="text-2xl font-semibold text-gray-900">
+                        {steps.find(s => s.id === activeStep)?.title}
                       </h3>
-                      <p className="text-gray-500 text-sm">
-                        Hover over a step to see details
-                      </p>
                     </div>
+                    <div className="w-16 h-px bg-gray-900"></div>
                   </div>
-                )}
+
+                  {/* Description */}
+                  <div className="mb-10">
+                    <p className="text-gray-700 leading-relaxed text-lg">
+                      {steps.find(s => s.id === activeStep)?.details.description}
+                    </p>
+                  </div>
+
+                  {/* Features - Clean List */}
+                  <div className="space-y-10">
+                    {steps.find(s => s.id === activeStep)?.details.features.map((feature, index) => (
+                      <div key={index}>
+                        <h4 className="font-semibold text-gray-900 mb-4">
+                          {feature.title}
+                        </h4>
+                        <div className="space-y-3">
+                          {feature.items.map((item, itemIndex) => (
+                            <div key={itemIndex} className="flex items-start gap-3">
+                              <div className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0 mt-2.5"></div>
+                              <p className="text-gray-600 leading-relaxed">
+                                {item}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Simple Note */}
+                  <div className="mt-10 pt-6 border-t border-gray-200">
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      <span className="font-medium text-gray-900">Note:</span> {steps.find(s => s.id === activeStep)?.details.highlight}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -282,8 +307,8 @@ export default function HomePage() {
             </h1>
             
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
-              Use your crypto as collateral to access curated, tokenized real-world investments. 
-              KYC + wallet in minutes. Trade positions on a compliant marketplace.
+              Use your crypto as collateral to access curated RWA tokenization opportunities. 
+              KYC + wallet in minutes. Trade tokenized real world assets on a compliant marketplace.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
@@ -330,7 +355,7 @@ export default function HomePage() {
               Featured strategies
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Curated, tokenized investments with transparent rules and clear fees
+              Curated tokenized RWA opportunities with transparent rules and clear fees
             </p>
           </div>
           
