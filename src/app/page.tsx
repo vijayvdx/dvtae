@@ -153,49 +153,6 @@ function HowItWorksSection() {
             <div className="lg:col-span-7">
               <div className="lg:sticky lg:top-8">
                 <div className="animate-fadeIn">
-                  {/* Navigation arrows at top */}
-                  <div className="flex justify-between items-center mb-8">
-                    <button
-                      onClick={() => setActiveStep(Math.max(1, activeStep - 1))}
-                      disabled={activeStep === 1}
-                      className={`p-2 rounded-full transition-colors ${
-                        activeStep === 1 
-                          ? 'text-gray-300 cursor-not-allowed' 
-                          : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
-                      }`}
-                    >
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                      </svg>
-                    </button>
-                    
-                    <div className="flex items-center gap-2">
-                      {steps.map((step) => (
-                        <button
-                          key={step.id}
-                          onClick={() => setActiveStep(step.id)}
-                          className={`w-2 h-2 rounded-full transition-colors ${
-                            activeStep === step.id ? 'bg-gray-900' : 'bg-gray-300 hover:bg-gray-400'
-                          }`}
-                        />
-                      ))}
-                    </div>
-                    
-                    <button
-                      onClick={() => setActiveStep(Math.min(steps.length, activeStep + 1))}
-                      disabled={activeStep === steps.length}
-                      className={`p-2 rounded-full transition-colors ${
-                        activeStep === steps.length 
-                          ? 'text-gray-300 cursor-not-allowed' 
-                          : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
-                      }`}
-                    >
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </button>
-                  </div>
-
                   {/* Clean Header */}
                   <div className="mb-8">
                     <div className="flex items-center gap-3 mb-4">
@@ -242,6 +199,49 @@ function HowItWorksSection() {
                     <p className="text-sm text-gray-600 leading-relaxed">
                       <span className="font-medium text-gray-900">Note:</span> {steps.find(s => s.id === activeStep)?.details.highlight}
                     </p>
+                  </div>
+
+                  {/* Navigation arrows at bottom */}
+                  <div className="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
+                    <button
+                      onClick={() => setActiveStep(Math.max(1, activeStep - 1))}
+                      disabled={activeStep === 1}
+                      className={`p-2 rounded-full transition-colors ${
+                        activeStep === 1 
+                          ? 'text-gray-300 cursor-not-allowed' 
+                          : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                      }`}
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                    </button>
+                    
+                    <div className="flex items-center gap-2">
+                      {steps.map((step) => (
+                        <button
+                          key={step.id}
+                          onClick={() => setActiveStep(step.id)}
+                          className={`w-2 h-2 rounded-full transition-colors ${
+                            activeStep === step.id ? 'bg-gray-900' : 'bg-gray-300 hover:bg-gray-400'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                    
+                    <button
+                      onClick={() => setActiveStep(Math.min(steps.length, activeStep + 1))}
+                      disabled={activeStep === steps.length}
+                      className={`p-2 rounded-full transition-colors ${
+                        activeStep === steps.length 
+                          ? 'text-gray-300 cursor-not-allowed' 
+                          : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                      }`}
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
                   </div>
                 </div>
               </div>
