@@ -194,15 +194,8 @@ function HowItWorksSection() {
                     ))}
                   </div>
 
-                  {/* Simple Note */}
-                  <div className="mt-10 pt-6 border-t border-gray-200">
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      <span className="font-medium text-gray-900">Note:</span> {steps.find(s => s.id === activeStep)?.details.highlight}
-                    </p>
-                  </div>
-
                   {/* Navigation arrows at bottom */}
-                  <div className="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
+                  <div className="flex justify-between items-center mt-10 pt-6 border-t border-gray-200">
                     <button
                       onClick={() => setActiveStep(Math.max(1, activeStep - 1))}
                       disabled={activeStep === 1}
