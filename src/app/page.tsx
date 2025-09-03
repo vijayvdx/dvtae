@@ -10,7 +10,7 @@ function HowItWorksSection() {
     {
       id: 1,
       title: "Connect & Verify",
-      summary: "Link your wallet and complete KYC/AML to unlock investing.",
+      summary: "Link your wallet and complete KYC/AML to unlock investing. Unlock access to tokenized deals.",
       details: {
         description: "We're a compliance-first platform. Connect your wallet and pass KYC/AML once to access offerings.",
         features: [
@@ -37,7 +37,7 @@ function HowItWorksSection() {
     {
       id: 2,
       title: "Pledge or Fund",
-      summary: "Use crypto as collateral (with institutional leverage typically 70–100% of the deposited value) or deposit cash/stablecoins.",
+      summary: "Use crypto as collateral (with institutional leverage typically 70–100% of the deposited value) or deposit cash/stablecoins. Finance 70–100% of allocation without selling coins.",
       details: {
         description: "Keep your upside—use crypto as collateral instead of selling. Lenders typically provide 70–100% financing against your deposit; proceeds fund investments on-platform.",
         features: [
@@ -64,7 +64,7 @@ function HowItWorksSection() {
     {
       id: 3,
       title: "Invest & Trade",
-      summary: "Buy compliant ERC-1400 tokens and access peer-to-peer liquidity with AI-assisted pricing and on-chain records.",
+      summary: "Buy compliant ERC-1400 tokens and access peer-to-peer liquidity with AI-assisted pricing and on-chain records. Own compliant tokens; access P2P liquidity.",
       details: {
         description: "Allocate into tokenized offerings, receive ERC-1400 tokens, and manage positions in your portfolio. Trading unlocks per rule set.",
         features: [
@@ -301,12 +301,18 @@ export default function HomePage() {
               KYC + wallet in minutes. Trade tokenized real world assets on a compliant marketplace.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <Link href="/waitlist" className="btn btn-primary btn-lg">
-                Join the waitlist
+                Get Started
               </Link>
-              <Link href="/how-it-works" className="btn btn-secondary">
-                Learn how it works
+              <Link href="/marketplace" className="btn btn-secondary">
+                Explore Marketplace
+              </Link>
+            </div>
+            
+            <div className="text-center mb-12">
+              <Link href="#consult" className="text-indigo-600 hover:text-indigo-700 font-medium underline">
+                Schedule a consultation →
               </Link>
             </div>
             
@@ -320,27 +326,46 @@ export default function HomePage() {
       {/* Trust Indicators */}
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-4">
-              Trusted by institutional partners
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-              <div className="text-center">
-                <div className="text-lg font-semibold text-gray-700 mb-1">Multi-Strategy Asset Manager</div>
-                <div className="text-sm text-gray-500">$12.4B AUM</div>
-              </div>
-              <div className="text-center">
-                <div className="text-lg font-semibold text-gray-700 mb-1">Global Credit Fund</div>
-                <div className="text-sm text-gray-500">$8.7B AUM</div>
-              </div>
-              <div className="text-center">
-                <div className="text-lg font-semibold text-gray-700 mb-1">Venture Capital Fund</div>
-                <div className="text-sm text-gray-500">$3.2B AUM</div>
-              </div>
-              <div className="text-center">
-                <div className="text-lg font-semibold text-gray-700 mb-1">CLO Equity Fund</div>
-                <div className="text-sm text-gray-500">$5.8B AUM</div>
-              </div>
+          <div className="text-center">
+            <div className="flex flex-wrap justify-center items-center gap-4 max-w-3xl mx-auto">
+              <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Custody</span>
+              <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Oracles</span>
+              <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Compliance</span>
+              <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Transfer Agent</span>
+              <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Audits</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits */}
+      <section className="py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Why this is better
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="card">
+              <h3 className="font-semibold text-gray-900 mb-3">Keep your crypto</h3>
+              <p className="text-gray-600">Pledge instead of selling so you retain upside while generating income.</p>
+            </div>
+            
+            <div className="card">
+              <h3 className="font-semibold text-gray-900 mb-3">Institutional rails</h3>
+              <p className="text-gray-600">Multi-sig custody, oracle monitoring, and on-chain compliance.</p>
+            </div>
+            
+            <div className="card">
+              <h3 className="font-semibold text-gray-900 mb-3">Liquidity access</h3>
+              <p className="text-gray-600">Secondary windows with published, indicative bids/asks.</p>
+            </div>
+            
+            <div className="card">
+              <h3 className="font-semibold text-gray-900 mb-3">Transparent costs</h3>
+              <p className="text-gray-600">Clear, low execution and servicing fees.</p>
             </div>
           </div>
         </div>
@@ -349,16 +374,19 @@ export default function HomePage() {
       {/* How It Works */}
       <HowItWorksSection />
 
-      {/* Featured Strategies */}
+      {/* Initial Opportunities */}
       <section id="strategies" className="py-20 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Featured strategies
+              Initial opportunities
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
               Curated tokenized RWA opportunities with transparent rules and clear fees
             </p>
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-sm font-medium mb-8">
+              Illustrative only
+            </div>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -459,7 +487,10 @@ export default function HomePage() {
             </div>
           </div>
           
-          <div className="text-center mt-12">
+          <div className="text-center mt-8">
+            <p className="text-sm text-gray-600 mb-6">
+              Target yields are illustrative and not guaranteed; availability and terms vary by offering.
+            </p>
             <Link href="/marketplace" className="btn btn-primary">
               Explore all strategies
             </Link>
@@ -599,22 +630,25 @@ export default function HomePage() {
                 <div className="flex justify-between items-center">
                   <span className="text-gray-600">Direct Lending Note 2025-1</span>
                   <div className="flex gap-2">
-                    <span className="badge" style={{color: 'rgb(107, 114, 128)', borderColor: 'rgb(209, 213, 219)'}}>Bid 99.2</span>
-                    <span className="badge" style={{color: 'rgb(107, 114, 128)', borderColor: 'rgb(209, 213, 219)'}}>Ask 101.1</span>
+                    <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs">Bid 99.2</span>
+                    <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs">Ask 101.1</span>
+                    <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs font-medium">Illustrative</span>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-600">Real Estate Fund Series A</span>
                   <div className="flex gap-2">
-                    <span className="badge" style={{color: 'rgb(107, 114, 128)', borderColor: 'rgb(209, 213, 219)'}}>Bid 98.5</span>
-                    <span className="badge" style={{color: 'rgb(107, 114, 128)', borderColor: 'rgb(209, 213, 219)'}}>Ask 102.3</span>
+                    <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs">Bid 98.5</span>
+                    <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs">Ask 102.3</span>
+                    <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs font-medium">Illustrative</span>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-600">Structured Credit Pool B</span>
                   <div className="flex gap-2">
-                    <span className="badge" style={{color: 'rgb(107, 114, 128)', borderColor: 'rgb(209, 213, 219)'}}>Bid 97.8</span>
-                    <span className="badge" style={{color: 'rgb(107, 114, 128)', borderColor: 'rgb(209, 213, 219)'}}>Ask 103.1</span>
+                    <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs">Bid 97.8</span>
+                    <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs">Ask 103.1</span>
+                    <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs font-medium">Illustrative</span>
                   </div>
                 </div>
               </div>
@@ -743,6 +777,21 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+
+      {/* Consultation Anchor */}
+      <div id="consult" className="py-8">
+        <div className="max-w-4xl mx-auto text-center px-6">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            Schedule a consultation
+          </h3>
+          <p className="text-gray-600 mb-6">
+            Ready to learn more? Our team is here to help you understand how tokenized assets can fit into your investment strategy.
+          </p>
+          <p className="text-sm text-gray-500">
+            Contact us to schedule a personalized consultation.
+          </p>
+        </div>
+      </div>
     </>
   )
 }

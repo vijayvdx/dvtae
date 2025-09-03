@@ -72,6 +72,12 @@ export default function Header() {
 
             <div className="flex items-center space-x-3">
               <Link 
+                href="#consult" 
+                className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                Schedule a consultation
+              </Link>
+              <Link 
                 href="/waitlist" 
                 className="bg-indigo-600 text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors"
               >
