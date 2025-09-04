@@ -3,6 +3,21 @@
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
+interface Step {
+  id: number;
+  title: string;
+  summary: string;
+  benefit: string;
+  details: {
+    description: string;
+    features: Array<{
+      title: string;
+      items: string[];
+    }>;
+    highlight: string;
+  };
+}
+
 function HowItWorksSection() {
   const [activeStep, setActiveStep] = useState<number>(1)
 
@@ -10,7 +25,8 @@ function HowItWorksSection() {
     {
       id: 1,
       title: "Connect & Verify",
-      summary: "Link your wallet and complete KYC/AML to unlock investing. Unlock access to tokenized deals.",
+      summary: "Link your wallet and complete KYC/AML. Eligible investors can proceed to funding.",
+      benefit: "Unlock access to tokenized deals.",
       details: {
         description: "We're a compliance-first platform. Connect your wallet and pass KYC/AML once to access offerings.",
         features: [
@@ -37,7 +53,8 @@ function HowItWorksSection() {
     {
       id: 2,
       title: "Pledge or Fund",
-      summary: "Use crypto as collateral (with institutional leverage typically 70–100% of the deposited value) or deposit cash/stablecoins. Finance 70–100% of allocation without selling coins.",
+      summary: "Deposit crypto, stablecoins, or cash. Your crypto can secure 70–100% financing via institutional lenders.",
+      benefit: "Finance 70–100% of allocation without selling coins.",
       details: {
         description: "Keep your upside—use crypto as collateral instead of selling. Lenders typically provide 70–100% financing against your deposit; proceeds fund investments on-platform.",
         features: [
@@ -64,7 +81,8 @@ function HowItWorksSection() {
     {
       id: 3,
       title: "Invest & Trade",
-      summary: "Buy compliant ERC-1400 tokens and access peer-to-peer liquidity with AI-assisted pricing and on-chain records. Own compliant tokens; access P2P liquidity.",
+      summary: "Allocate into tokenized offerings and access a P2P marketplace with AI-assisted pricing and on-chain records.",
+      benefit: "Own compliant tokens; access P2P liquidity.",
       details: {
         description: "Allocate into tokenized offerings, receive ERC-1400 tokens, and manage positions in your portfolio. Trading unlocks per rule set.",
         features: [
@@ -137,10 +155,15 @@ function HowItWorksSection() {
                         }`}>
                           {step.title}
                         </h3>
-                        <p className={`text-sm leading-relaxed transition-colors duration-200 ${
+                        <p className={`text-sm leading-relaxed transition-colors duration-200 mb-2 ${
                           activeStep === step.id ? 'text-gray-600' : 'text-gray-500'
                         }`}>
                           {step.summary}
+                        </p>
+                        <p className={`text-sm leading-relaxed transition-colors duration-200 italic ${
+                          activeStep === step.id ? 'text-gray-600' : 'text-gray-500'
+                        }`}>
+                          {step.benefit}
                         </p>
                       </div>
                     </div>
@@ -301,20 +324,23 @@ export default function HomePage() {
               KYC + wallet in minutes. Trade tokenized real world assets on a compliant marketplace.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <Link href="/waitlist" className="btn btn-primary btn-lg">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-3">
+              <Link href="/waitlist" className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-colors">
                 Get Started
               </Link>
-              <Link href="/marketplace" className="btn btn-secondary">
+              <Link href="#strategies" className="bg-transparent border border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-50 hover:border-gray-400 transition-colors">
                 Explore Marketplace
               </Link>
-            </div>
-            
-            <div className="text-center mb-12">
-              <Link href="#consult" className="text-indigo-600 hover:text-indigo-700 font-medium underline">
+              <Link 
+                href="#consult" 
+                className="text-gray-700 hover:text-gray-900 font-medium underline transition-colors"
+                style={{padding: '0 0 0 8px', border: 'none', textDecoration: 'underline', background: 'transparent'}}
+              >
                 Schedule a consultation →
               </Link>
             </div>
+            
+            <div className="mb-12"></div>
             
             <p className="text-sm text-gray-500">
               Regulated • Compliant • Institutional-grade
@@ -327,43 +353,47 @@ export default function HomePage() {
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
-            <div className="flex flex-wrap justify-center items-center gap-4 max-w-3xl mx-auto">
-              <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Custody</span>
-              <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Oracles</span>
-              <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Compliance</span>
-              <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Transfer Agent</span>
-              <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Audits</span>
-            </div>
+            <ul className="flex flex-wrap justify-center items-center gap-1 max-w-3xl mx-auto text-gray-600 text-sm">
+              <li className="px-3 py-1 bg-gray-100 text-gray-600 rounded border border-gray-300">Custody</li>
+              <li className="text-gray-400">•</li>
+              <li className="px-3 py-1 bg-gray-100 text-gray-600 rounded border border-gray-300">Oracles</li>
+              <li className="text-gray-400">•</li>
+              <li className="px-3 py-1 bg-gray-100 text-gray-600 rounded border border-gray-300">Compliance</li>
+              <li className="text-gray-400">•</li>
+              <li className="px-3 py-1 bg-gray-100 text-gray-600 rounded border border-gray-300">Transfer Agent</li>
+              <li className="text-gray-400">•</li>
+              <li className="px-3 py-1 bg-gray-100 text-gray-600 rounded border border-gray-300">Audits</li>
+            </ul>
           </div>
         </div>
       </section>
 
       {/* Benefits */}
-      <section className="py-20 px-6">
+      <section aria-labelledby="benefits-title" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 id="benefits-title" className="text-4xl font-bold text-gray-900 mb-4">
               Why this is better
             </h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="card">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
               <h3 className="font-semibold text-gray-900 mb-3">Keep your crypto</h3>
               <p className="text-gray-600">Pledge instead of selling so you retain upside while generating income.</p>
             </div>
             
-            <div className="card">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
               <h3 className="font-semibold text-gray-900 mb-3">Institutional rails</h3>
               <p className="text-gray-600">Multi-sig custody, oracle monitoring, and on-chain compliance.</p>
             </div>
             
-            <div className="card">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
               <h3 className="font-semibold text-gray-900 mb-3">Liquidity access</h3>
               <p className="text-gray-600">Secondary windows with published, indicative bids/asks.</p>
             </div>
             
-            <div className="card">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
               <h3 className="font-semibold text-gray-900 mb-3">Transparent costs</h3>
               <p className="text-gray-600">Clear, low execution and servicing fees.</p>
             </div>
@@ -378,14 +408,13 @@ export default function HomePage() {
       <section id="strategies" className="py-20 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 id="strategies-title" className="text-4xl font-bold text-gray-900 mb-4">
               Initial opportunities
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-              Curated tokenized RWA opportunities with transparent rules and clear fees
-            </p>
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-sm font-medium mb-8">
-              Illustrative only
+            <div className="mt-1 mb-8">
+              <span className="inline-flex items-center px-3 py-1 rounded bg-gray-100 border border-gray-300 text-gray-600 text-sm font-medium">
+                Illustrative only
+              </span>
             </div>
           </div>
           
@@ -627,28 +656,15 @@ export default function HomePage() {
             <div className="bg-white rounded-2xl p-8 border border-gray-200">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Sample liquidity data</h3>
               <div className="space-y-3">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Direct Lending Note 2025-1</span>
-                  <div className="flex gap-2">
-                    <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs">Bid 99.2</span>
-                    <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs">Ask 101.1</span>
-                    <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs font-medium">Illustrative</span>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Real Estate Fund Series A</span>
-                  <div className="flex gap-2">
-                    <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs">Bid 98.5</span>
-                    <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs">Ask 102.3</span>
-                    <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs font-medium">Illustrative</span>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Structured Credit Pool B</span>
-                  <div className="flex gap-2">
-                    <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs">Bid 97.8</span>
-                    <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs">Ask 103.1</span>
-                    <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs font-medium">Illustrative</span>
+                <div className="space-y-4">
+                  <div>
+                    <span className="inline-flex items-center px-2 py-1 bg-gray-900 border border-gray-600 text-gray-300 rounded text-xs font-medium">Illustrative</span>
+                    <div className="flex gap-2 mt-2">
+                      <span className="inline-flex items-center px-2 py-1 bg-gray-900 border border-gray-600 text-gray-300 rounded text-xs">Bid 99.2</span>
+                      <span className="inline-flex items-center px-2 py-1 bg-gray-900 border border-gray-600 text-gray-300 rounded text-xs">Ask 101.1</span>
+                      <span className="inline-flex items-center px-2 py-1 bg-gray-900 border border-gray-600 text-gray-300 rounded text-xs">Depth: Med</span>
+                    </div>
+                    <div className="mt-3 text-gray-500 text-sm">Sample data for illustration only.</div>
                   </div>
                 </div>
               </div>
@@ -778,20 +794,30 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Consultation Anchor */}
-      <div id="consult" className="py-8">
-        <div className="max-w-4xl mx-auto text-center px-6">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Schedule a consultation
-          </h3>
-          <p className="text-gray-600 mb-6">
-            Ready to learn more? Our team is here to help you understand how tokenized assets can fit into your investment strategy.
-          </p>
-          <p className="text-sm text-gray-500">
-            Contact us to schedule a personalized consultation.
-          </p>
+      {/* Consultation Section */}
+      <section id="consult" className="py-16 px-6 bg-gray-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="bg-white rounded-2xl p-8 border border-gray-200">
+            <h2 id="consult-title" className="text-xl font-semibold text-gray-900 mb-1">
+              Let's talk
+            </h2>
+            <p className="text-gray-600 mt-1 mb-6">
+              Book a 30-minute session to scope tokenization, distribution, or lending.
+            </p>
+            <p className="mt-3">
+              <Link 
+                href="mailto:hello@dvtae.com?subject=Consultation%20request" 
+                className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+              >
+                Schedule a consultation
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
     </>
   )
 }

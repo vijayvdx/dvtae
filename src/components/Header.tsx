@@ -73,7 +73,7 @@ export default function Header() {
             <div className="flex items-center space-x-3">
               <Link 
                 href="#consult" 
-                className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+                className="bg-transparent border border-gray-300 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-50 hover:border-gray-400 transition-colors"
               >
                 Schedule a consultation
               </Link>
