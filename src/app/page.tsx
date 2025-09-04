@@ -116,7 +116,7 @@ function HowItWorksSection() {
             How it works
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Three simple steps to access tokenized RWA (real world assets) and start generating yield from your crypto holdings
+            Three simple steps to access tokenized RWA (real-world assets) and start generating yield from your crypto holdings
           </p>
         </div>
         
@@ -321,7 +321,7 @@ export default function HomePage() {
             
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
               Use your crypto as collateral to access curated investment opportunities. 
-              KYC + wallet in minutes. Trade tokenized real world assets on a compliant marketplace.
+              KYC + wallet in minutes. Trade tokenized real-world assets on a compliant marketplace.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-3">
@@ -331,19 +331,19 @@ export default function HomePage() {
               <Link href="#strategies" className="bg-transparent border border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-50 hover:border-gray-400 transition-colors">
                 Explore Marketplace
               </Link>
-              <Link 
+              <a 
                 href="#consult" 
-                className="text-gray-700 hover:text-gray-900 font-medium underline transition-colors"
-                style={{padding: '0 0 0 8px', border: 'none', textDecoration: 'underline', background: 'transparent'}}
+                onClick={(e) => {e.preventDefault(); const w = window as typeof window & {openCalendly?: () => void}; w.openCalendly?.();}}
+                className="text-gray-700 hover:text-gray-900 font-medium underline"
               >
                 Schedule a consultation →
-              </Link>
+              </a>
             </div>
             
             <div className="mb-12"></div>
             
             <p className="text-sm text-gray-500">
-              Regulated • Compliant • Institutional-grade
+              Compliance-first • Institutional-grade • Built-in safeguards
             </p>
           </div>
         </div>
@@ -551,7 +551,11 @@ export default function HomePage() {
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Asset Managers</h3>
               <p className="text-gray-600 mb-6">Tokenize, distribute, and service your strategy on one platform.</p>
               <p className="mt-3">
-                <a href="#consult" onClick={() => { if (typeof window !== 'undefined') { const openFn = (window as unknown as {openCalendly?: () => void}).openCalendly; if (openFn) openFn(); } return false; }} className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors">
+                <a
+                  href="#consult"
+                  onClick={(e) => {e.preventDefault(); const w = window as typeof window & {openCalendly?: () => void}; w.openCalendly?.();}}
+                  className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors"
+                >
                   Schedule a consultation
                 </a>
               </p>
@@ -561,7 +565,11 @@ export default function HomePage() {
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Lenders</h3>
               <p className="text-gray-600 mb-6">Offer secured credit programs with automated LTV monitoring.</p>
               <p className="mt-3">
-                <a href="#consult" onClick={() => { if (typeof window !== 'undefined') { const openFn = (window as unknown as {openCalendly?: () => void}).openCalendly; if (openFn) openFn(); } return false; }} className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors">
+                <a
+                  href="#consult"
+                  onClick={(e) => {e.preventDefault(); const w = window as typeof window & {openCalendly?: () => void}; w.openCalendly?.();}}
+                  className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors"
+                >
                   Schedule a consultation
                 </a>
               </p>
@@ -676,7 +684,7 @@ export default function HomePage() {
                   </svg>
                   <div>
                     <h3 className="font-semibold text-gray-900">Institutional custody</h3>
-                    <p className="text-gray-600">BNY Mellon and State Street integration for asset safekeeping</p>
+                    <p className="text-gray-600">Integrations with leading institutional custodians for asset safekeeping</p>
                   </div>
                 </div>
                 
@@ -784,8 +792,8 @@ export default function HomePage() {
             </p>
             <p className="mt-3">
               <a 
-                href="#consult" 
-                onClick={() => { if (typeof window !== 'undefined') { const openFn = (window as unknown as {openCalendly?: () => void}).openCalendly; if (openFn) openFn(); } return false; }}
+                href="#consult"
+                onClick={(e) => {e.preventDefault(); const w = window as typeof window & {openCalendly?: () => void}; w.openCalendly?.();}}
                 className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
               >
                 Schedule a consultation
@@ -899,7 +907,7 @@ export default function HomePage() {
               msg.textContent = 'Submitting…';
               
               try {
-                const res = await fetch('https://script.google.com/macros/s/AKfycby_PLACEHOLDER_DEPLOYMENT_ID/exec', {
+                const res = await fetch('https://script.google.com/macros/s/AKfycby_PLACEHOLDER_DEPLOYMENT_ID/exec', { // TODO: Replace with actual deployment ID
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json' },
                   body: JSON.stringify({
@@ -958,7 +966,7 @@ export default function HomePage() {
             
             <FAQItem 
               question="How are assets custody protected?"
-              answer="We use multi-signature custody solutions with institutional partners like BNY Mellon and State Street. Assets are held in segregated SPVs with trustee oversight, and we conduct regular third-party audits."
+              answer="We use multi-signature custody solutions with leading institutional partners. Assets are held in segregated SPVs with trustee oversight, and we conduct regular third-party audits."
             />
             
             <FAQItem 

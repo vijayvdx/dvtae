@@ -85,7 +85,7 @@ export default function Security() {
                 Risk automation
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Daily mark-to-market via Chainlink, auto-margin if LTV breaches thresholds.
+                Daily mark-to-market via oracle providers (e.g., Chainlink), auto-margin if LTV breaches thresholds.
               </p>
             </div>
 
@@ -135,7 +135,7 @@ export default function Security() {
                 Multi-sig wallet architecture
               </h3>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Fireblocks-style multi-sig wallets with named co-signers (Investor, Platform, Lender). First-lien pledge to the lender; daily oracle marks; automatic margin calls if LTV &gt; 55%.
+                Institutional multi-sig architecture with named co-signers (Investor, Platform, Lender). First-lien pledge to the lender; daily oracle marks; automatic margin calls if LTV &gt; 55%.
               </p>
             </div>
 
@@ -144,7 +144,7 @@ export default function Security() {
                 SPV/Series segregation
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                SPV/Series segregation under a Delaware Series LLC; custodian/trustee (e.g., BNY Mellon or State Street); perfected security interest; annual third-party audit & NAV attestation.
+                SPV/Series segregation under a Delaware Series LLC; leading institutional custodians; perfected security interest; annual third-party audit & NAV attestation.
               </p>
             </div>
           </div>
@@ -380,6 +380,13 @@ export default function Security() {
               </button>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Compliance Disclaimer */}
+      <section className="py-10 text-sm text-gray-600">
+        <div className="max-w-5xl mx-auto text-center px-6">
+          <p>Information is for institutional / professional investors. Availability subject to eligibility and jurisdiction. Investing involves risk, including loss of principal. Nothing herein is investment advice.</p>
         </div>
       </section>
     </div>

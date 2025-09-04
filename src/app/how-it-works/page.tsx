@@ -191,7 +191,7 @@ export default function HowItWorksPage() {
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0 mt-2.5"></div>
-                        <p className="text-gray-600 leading-relaxed">Typical unlock: 30-day secondary window (varies by offering)</p>
+                        <p className="text-gray-600 leading-relaxed">Typical unlock: 30-day secondary window (illustrative, varies by offering)</p>
                       </div>
                     </div>
                   </div>
@@ -331,8 +331,9 @@ export default function HowItWorksPage() {
             <Link href="/waitlist" className="btn btn-primary btn-lg">
               Join the waitlist
             </Link>
-            <Link href="/marketplace" className="btn btn-secondary">
+            <Link href="/marketplace" className="btn btn-secondary inline-flex items-center gap-2">
               Explore marketplace
+              <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-600">Coming soon</span>
             </Link>
           </div>
         </div>

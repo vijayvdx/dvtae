@@ -140,11 +140,11 @@ export default function ForLenders() {
             />
             <FAQItem 
               question="What are typical LTV bands?"
-              answer="Programs commonly start around 30–60% LTV with stepped triggers; final bands depend on collateral and venue."
+              answer="Programs commonly start around 30–60% LTV with stepped triggers; final bands depend on collateral and venue. Terms vary by program."
             />
             <FAQItem 
               question="How are liquidations handled?"
-              answer="Automated notices and margin logic enforce thresholds; liquidation paths are documented in program terms."
+              answer="Automated notices and margin logic enforce thresholds; liquidation paths are documented in program terms. Specific parameters vary by program."
             />
             <FAQItem 
               question="What dashboards are available?"
@@ -165,15 +165,16 @@ export default function ForLenders() {
               Book a 30-minute session with our team.
             </p>
             <p className="mt-3">
-              <Link 
-                href="mailto:hello@dvtae.com?subject=Lender%20consultation" 
+              <a 
+                href="#consult" 
+                onClick={(e) => {e.preventDefault(); const w = window as typeof window & {openCalendly?: () => void}; w.openCalendly?.();}}
                 className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
               >
                 Schedule a consultation
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </Link>
+              </a>
             </p>
           </div>
         </div>

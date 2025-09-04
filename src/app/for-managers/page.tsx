@@ -1,25 +1,6 @@
-import Link from 'next/link'
-import type { Metadata } from 'next'
+'use client'
 
-export const metadata: Metadata = {
-  title: 'For Managers — DvTae',
-  description: 'Tokenize, distribute, and service your strategies on one platform. Compliant ERC-1400 tokens, streamlined KYC, crypto-native distribution, and AI-assisted marketplace.',
-  keywords: 'asset managers, tokenization, ERC-1400, KYC compliance, crypto distribution, AI price discovery, fund tokenization, RWA managers',
-  openGraph: {
-    title: 'For Managers — DvTae',
-    description: 'Tokenize, distribute, and service your strategies on one platform with compliant ERC-1400 tokens and crypto-native distribution.',
-    url: 'https://dvtae.com/for-managers',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'For Managers — DvTae',
-    description: 'Tokenize, distribute, and service your strategies on one platform with compliant ERC-1400 tokens and crypto-native distribution.',
-  },
-  alternates: {
-    canonical: '/for-managers',
-  },
-}
+import Link from 'next/link'
 
 export default function ForManagers() {
   return (
@@ -32,15 +13,23 @@ export default function ForManagers() {
               Tokenize, distribute, and service—on one platform
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-600 mb-6 max-w-4xl mx-auto leading-relaxed">
               Bring your strategy on-chain with compliant ERC-1400 tokens, streamlined KYC, crypto-native distribution, and a marketplace with AI-assisted price discovery.
+            </p>
+            
+            <p className="text-sm text-gray-500 mb-12 max-w-3xl mx-auto">
+              Investments are available to eligible investors and jurisdictions only. Availability and terms vary by offering.
             </p>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="#consult" className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-colors">
+              <a 
+                href="#consult" 
+                onClick={(e) => {e.preventDefault(); const w = window as typeof window & {openCalendly?: () => void}; w.openCalendly?.();}}
+                className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-colors"
+              >
                 Schedule a consultation
-              </Link>
+              </a>
               <Link href="/for-managers/apply" className="bg-transparent border border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-50 hover:border-gray-400 transition-colors">
                 Apply to list
               </Link>
@@ -153,15 +142,16 @@ export default function ForManagers() {
               Book a 30-minute session with our team.
             </p>
             <p className="mt-3">
-              <Link 
-                href="mailto:hello@dvtae.com?subject=Manager%20consultation" 
+              <a 
+                href="#consult" 
+                onClick={(e) => {e.preventDefault(); const w = window as typeof window & {openCalendly?: () => void}; w.openCalendly?.();}}
                 className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
               >
                 Schedule a consultation
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </Link>
+              </a>
             </p>
           </div>
         </div>

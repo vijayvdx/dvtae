@@ -54,8 +54,35 @@ export default function About() {
         </div>
       </section>
 
-      {/* Coming Soon */}
+      {/* Company Facts */}
       <section className="py-20 px-6 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            Company Facts
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Founded</h3>
+              <p className="text-gray-600">2024</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Headquarters</h3>
+              <p className="text-gray-600">New York, NY</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Focus</h3>
+              <p className="text-gray-600">Institutional and professional investors only</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">What We Don&apos;t Do</h3>
+              <p className="text-gray-600">No retail investors, no unregulated assets, no yield farming</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Coming Soon */}
+      <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
             <span className="inline-flex items-center px-3 py-1 rounded bg-gray-100 border border-gray-300 text-gray-600 text-sm font-medium mb-6">
