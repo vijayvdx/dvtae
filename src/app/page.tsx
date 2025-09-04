@@ -21,7 +21,7 @@ interface Step {
 function HowItWorksSection() {
   const [activeStep, setActiveStep] = useState<number>(1)
 
-  const steps = [
+  const steps: Step[] = [
     {
       id: 1,
       title: "Connect & Verify",
@@ -799,7 +799,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-white rounded-2xl p-8 border border-gray-200">
             <h2 id="consult-title" className="text-xl font-semibold text-gray-900 mb-1">
-              Let's talk
+              Let&apos;s talk
             </h2>
             <p className="text-gray-600 mt-1 mb-6">
               Book a 30-minute session to scope tokenization, distribution, or lending.
