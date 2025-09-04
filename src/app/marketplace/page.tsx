@@ -9,14 +9,24 @@ export const metadata: Metadata = {
 export default function MarketplacePage() {
   return (
     <>
-      {/* Page Header */}
-      <section className="pt-24 pb-12 px-6">
+      {/* Hero Section with Coming Soon */}
+      <section className="pt-24 pb-20 px-6">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-gray-900 mb-6">
-            Marketplace
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Discover tokenized strategies with transparent rules, clear fees, and peer-to-peer liquidity.
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-gray-900">
+              Marketplace
+            </h1>
+            <span className="inline-flex items-center px-3 py-1 rounded bg-gray-100 border border-gray-300 text-gray-600 text-sm font-medium">
+              Coming soon
+            </span>
+          </div>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
+            Explore categories and example structures. Card data is illustrative. Join the waitlist for early access.
+          </p>
+          <p className="mt-3">
+            <Link href="/waitlist" className="bg-transparent border border-gray-300 text-gray-700 px-6 py-3 rounded-lg text-sm font-medium hover:bg-gray-50 hover:border-gray-400 transition-colors">
+              Join waitlist
+            </Link>
           </p>
         </div>
       </section>
@@ -129,6 +139,16 @@ export default function MarketplacePage() {
               </div>
             </Link>
           </div>
+          
+          {/* Sidebar Note */}
+          <aside className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm mt-12 max-w-2xl mx-auto">
+            <h3 className="text-lg font-semibold text-gray-900 mb-3">
+              How secondary windows work
+            </h3>
+            <p className="text-gray-600">
+              Some offerings enable secondary trading after an initial unlock window. Timing and eligibility vary by token and jurisdiction.
+            </p>
+          </aside>
         </div>
       </section>
 

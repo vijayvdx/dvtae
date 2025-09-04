@@ -234,6 +234,93 @@ export default function Security() {
         </div>
       </section>
 
+      {/* Custody Matrix */}
+      <section aria-labelledby="custody-matrix" className="py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <h2 id="custody-matrix" className="text-4xl font-bold text-gray-900 mb-8 text-center">
+            Custody matrix
+          </h2>
+          <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm max-w-4xl mx-auto">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr>
+                  <th className="text-left py-3 px-4 font-semibold text-gray-900 border-b border-gray-200">Wallet type</th>
+                  <th className="text-left py-3 px-4 font-semibold text-gray-900 border-b border-gray-200">Signers</th>
+                  <th className="text-left py-3 px-4 font-semibold text-gray-900 border-b border-gray-200">Coverage</th>
+                  <th className="text-left py-3 px-4 font-semibold text-gray-900 border-b border-gray-200">Audit cadence</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="py-3 px-4 text-gray-600 border-b border-gray-100">Institutional multi-sig</td>
+                  <td className="py-3 px-4 text-gray-600 border-b border-gray-100">Named co-signers</td>
+                  <td className="py-3 px-4 text-gray-600 border-b border-gray-100">Crime/cyber policy</td>
+                  <td className="py-3 px-4 text-gray-600 border-b border-gray-100">Annual + event-driven</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-4 text-gray-600 border-b border-gray-100">Cold storage</td>
+                  <td className="py-3 px-4 text-gray-600 border-b border-gray-100">Segregated</td>
+                  <td className="py-3 px-4 text-gray-600 border-b border-gray-100">Custodian policy</td>
+                  <td className="py-3 px-4 text-gray-600 border-b border-gray-100">Annual</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-4 text-gray-600">Operational wallet</td>
+                  <td className="py-3 px-4 text-gray-600">RBAC approvals</td>
+                  <td className="py-3 px-4 text-gray-600">Spend limits</td>
+                  <td className="py-3 px-4 text-gray-600">Quarterly</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Compliance Glossary */}
+      <section aria-labelledby="glossary" className="py-20 px-6 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 id="glossary" className="text-4xl font-bold text-gray-900 mb-8 text-center">
+            Compliance glossary
+          </h2>
+          <div className="space-y-4">
+            <details className="border border-gray-200 rounded-lg bg-white">
+              <summary className="cursor-pointer w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+                <span className="font-semibold text-gray-900">KYC / AML</span>
+              </summary>
+              <div className="px-6 pb-4">
+                <p className="text-gray-600 leading-relaxed">Identity verification and screening required to invest; approvals recorded on-chain.</p>
+              </div>
+            </details>
+            
+            <details className="border border-gray-200 rounded-lg bg-white">
+              <summary className="cursor-pointer w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+                <span className="font-semibold text-gray-900">ERC-1400</span>
+              </summary>
+              <div className="px-6 pb-4">
+                <p className="text-gray-600 leading-relaxed">A token standard enabling transfer restrictions and partitioned ownership for compliant assets.</p>
+              </div>
+            </details>
+            
+            <details className="border border-gray-200 rounded-lg bg-white">
+              <summary className="cursor-pointer w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+                <span className="font-semibold text-gray-900">Reg D / Reg S</span>
+              </summary>
+              <div className="px-6 pb-4">
+                <p className="text-gray-600 leading-relaxed">Common U.S. exemptions that impose investor eligibility and transfer limitations.</p>
+              </div>
+            </details>
+            
+            <details className="border border-gray-200 rounded-lg bg-white">
+              <summary className="cursor-pointer w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+                <span className="font-semibold text-gray-900">Whitelisting</span>
+              </summary>
+              <div className="px-6 pb-4">
+                <p className="text-gray-600 leading-relaxed">Only approved wallet addresses may receive and transfer specific tokens.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
       {/* Compliance & Disclosures Footer */}
       <section className="py-16 px-6 bg-indigo-600">
         <div className="max-w-7xl mx-auto">

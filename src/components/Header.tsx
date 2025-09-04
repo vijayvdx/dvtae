@@ -27,26 +27,16 @@ export default function Header() {
 
           <div className="flex items-center space-x-8">
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-6">
               <Link 
-                href="/" 
+                href="/marketplace" 
                 className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
-                  isActive('/') 
+                  isActive('/marketplace') 
                     ? 'text-gray-900 bg-gray-50' 
                     : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                 }`}
               >
-                Home
-              </Link>
-              <Link 
-                href="/for-managers" 
-                className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
-                  isActive('/for-managers') 
-                    ? 'text-gray-900 bg-gray-50' 
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-                }`}
-              >
-                For managers
+                Marketplace
               </Link>
               <Link 
                 href="/how-it-works" 
@@ -56,7 +46,7 @@ export default function Header() {
                     : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                 }`}
               >
-                How it works
+                How it Works
               </Link>
               <Link 
                 href="/security" 
@@ -67,6 +57,46 @@ export default function Header() {
                 }`}
               >
                 Security
+              </Link>
+              <Link 
+                href="/for-managers" 
+                className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
+                  isActive('/for-managers') 
+                    ? 'text-gray-900 bg-gray-50' 
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                }`}
+              >
+                For Managers
+              </Link>
+              <Link 
+                href="/for-lenders" 
+                className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
+                  isActive('/for-lenders') 
+                    ? 'text-gray-900 bg-gray-50' 
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                }`}
+              >
+                For Lenders
+              </Link>
+              <Link 
+                href="/resources" 
+                className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
+                  isActive('/resources') 
+                    ? 'text-gray-900 bg-gray-50' 
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                }`}
+              >
+                Resources
+              </Link>
+              <Link 
+                href="/about" 
+                className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
+                  isActive('/about') 
+                    ? 'text-gray-900 bg-gray-50' 
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                }`}
+              >
+                About
               </Link>
             </div>
 
@@ -103,26 +133,15 @@ export default function Header() {
           <div className="md:hidden py-4 border-t border-gray-200">
             <div className="flex flex-col space-y-2">
               <Link 
-                href="/" 
+                href="/marketplace" 
                 className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
-                  isActive('/') 
+                  isActive('/marketplace') 
                     ? 'text-gray-900 bg-gray-50' 
                     : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Home
-              </Link>
-              <Link 
-                href="/for-managers" 
-                className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
-                  isActive('/for-managers') 
-                    ? 'text-gray-900 bg-gray-50' 
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                For managers
+                Marketplace
               </Link>
               <Link 
                 href="/how-it-works" 
@@ -133,7 +152,7 @@ export default function Header() {
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                How it works
+                How it Works
               </Link>
               <Link 
                 href="/security" 
@@ -145,6 +164,50 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Security
+              </Link>
+              <Link 
+                href="/for-managers" 
+                className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
+                  isActive('/for-managers') 
+                    ? 'text-gray-900 bg-gray-50' 
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                For Managers
+              </Link>
+              <Link 
+                href="/for-lenders" 
+                className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
+                  isActive('/for-lenders') 
+                    ? 'text-gray-900 bg-gray-50' 
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                For Lenders
+              </Link>
+              <Link 
+                href="/resources" 
+                className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
+                  isActive('/resources') 
+                    ? 'text-gray-900 bg-gray-50' 
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Resources
+              </Link>
+              <Link 
+                href="/about" 
+                className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
+                  isActive('/about') 
+                    ? 'text-gray-900 bg-gray-50' 
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
               </Link>
             </div>
           </div>

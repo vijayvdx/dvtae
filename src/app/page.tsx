@@ -527,6 +527,49 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Who are you */}
+      <section aria-labelledby="who-title" className="py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 id="who-title" className="text-4xl font-bold text-gray-900 mb-4">
+              Who are you?
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <article className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Investors</h3>
+              <p className="text-gray-600 mb-6">Use crypto as collateral to access curated, tokenized opportunities—without selling.</p>
+              <p className="mt-3">
+                <Link href="/waitlist" className="bg-transparent border border-gray-300 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-50 hover:border-gray-400 transition-colors">
+                  Join waitlist
+                </Link>
+              </p>
+            </article>
+            
+            <article className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Asset Managers</h3>
+              <p className="text-gray-600 mb-6">Tokenize, distribute, and service your strategy on one platform.</p>
+              <p className="mt-3">
+                <Link href="/for-managers#consult" className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors">
+                  Schedule a consultation
+                </Link>
+              </p>
+            </article>
+            
+            <article className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Lenders</h3>
+              <p className="text-gray-600 mb-6">Offer secured credit programs with automated LTV monitoring.</p>
+              <p className="mt-3">
+                <Link href="/for-lenders#consult" className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors">
+                  Schedule a consultation
+                </Link>
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       {/* Security */}
       <section id="security" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
@@ -729,8 +772,33 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Consultation CTA */}
+      <section aria-labelledby="deal-title" id="consult" className="py-20 px-6 bg-gray-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="bg-white rounded-2xl p-8 border border-gray-200">
+            <h2 id="deal-title" className="text-3xl font-bold text-gray-900 mb-4">
+              Want to talk through a deal?
+            </h2>
+            <p className="text-gray-600 text-lg mt-1 mb-6">
+              Book a 30-minute session to scope tokenization, distribution, or lending.
+            </p>
+            <p className="mt-3">
+              <Link 
+                href="mailto:hello@dvtae.com?subject=Consultation%20request" 
+                className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+              >
+                Schedule a consultation
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
-      <section id="faq" className="py-20 px-6 bg-gray-50">
+      <section id="faq" className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -794,30 +862,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Consultation Section */}
-      <section id="consult" className="py-16 px-6 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-white rounded-2xl p-8 border border-gray-200">
-            <h2 id="consult-title" className="text-xl font-semibold text-gray-900 mb-1">
-              Let&apos;s talk
-            </h2>
-            <p className="text-gray-600 mt-1 mb-6">
-              Book a 30-minute session to scope tokenization, distribution, or lending.
-            </p>
-            <p className="mt-3">
-              <Link 
-                href="mailto:hello@dvtae.com?subject=Consultation%20request" 
-                className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
-              >
-                Schedule a consultation
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-            </p>
-          </div>
-        </div>
-      </section>
     </>
   )
 }

@@ -28,13 +28,13 @@ export default function Footer() {
             <h4 className="text-sm font-semibold text-gray-900 mb-4">Product</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/how-it-works" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  How it works
+                <Link href="/marketplace" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                  Marketplace
                 </Link>
               </li>
               <li>
-                <Link href="/for-managers" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  For managers
+                <Link href="/how-it-works" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                  How it works
                 </Link>
               </li>
               <li>
@@ -43,35 +43,40 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/waitlist" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  Join waitlist
+                <Link href="/for-managers" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                  For managers
+                </Link>
+              </li>
+              <li>
+                <Link href="/for-lenders" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                  For lenders
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Resources */}
           <div>
-            <h4 className="text-sm font-semibold text-gray-900 mb-4">Company</h4>
+            <h4 className="text-sm font-semibold text-gray-900 mb-4">Resources</h4>
             <ul className="space-y-3">
+              <li>
+                <Link href="/resources" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                  Resources
+                </Link>
+              </li>
+              <li>
+                <Link href="/resources/tokenization-white-paper.pdf" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                  White Paper
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                  About
+                </Link>
+              </li>
               <li>
                 <a href="mailto:hello@dvtae.com" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
                   Contact
-                </a>
-              </li>
-              <li>
-                <a href="https://twitter.com/dvtae" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  Twitter
-                </a>
-              </li>
-              <li>
-                <a href="https://linkedin.com/company/dvtae" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/dvtae" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  GitHub
                 </a>
               </li>
             </ul>

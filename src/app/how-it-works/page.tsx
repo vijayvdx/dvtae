@@ -257,6 +257,52 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
+      {/* What You Get */}
+      <section aria-labelledby="gets-title" className="py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 id="gets-title" className="text-4xl font-bold text-gray-900 mb-8">
+            What you get
+          </h2>
+          <ul className="mt-4 space-y-4 text-lg">
+            <li className="flex items-start">
+              <div className="w-2 h-2 bg-indigo-600 rounded-full mt-3 mr-4 flex-shrink-0"></div>
+              <span className="text-gray-700">Keep crypto exposure while generating income</span>
+            </li>
+            <li className="flex items-start">
+              <div className="w-2 h-2 bg-indigo-600 rounded-full mt-3 mr-4 flex-shrink-0"></div>
+              <span className="text-gray-700">Liquidity windows with indicative pricing</span>
+            </li>
+            <li className="flex items-start">
+              <div className="w-2 h-2 bg-indigo-600 rounded-full mt-3 mr-4 flex-shrink-0"></div>
+              <span className="text-gray-700">Institutional rails: custody, oracles, and on-chain compliance</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Risk & Safeguards */}
+      <section aria-labelledby="safeguards-title" className="py-20 px-6 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 id="safeguards-title" className="text-4xl font-bold text-gray-900 mb-8">
+            Risk &amp; safeguards
+          </h2>
+          <ul className="mt-4 space-y-4 text-lg">
+            <li className="flex items-start">
+              <div className="w-2 h-2 bg-indigo-600 rounded-full mt-3 mr-4 flex-shrink-0"></div>
+              <span className="text-gray-700">Oracle-based marks and LTV triggers</span>
+            </li>
+            <li className="flex items-start">
+              <div className="w-2 h-2 bg-indigo-600 rounded-full mt-3 mr-4 flex-shrink-0"></div>
+              <span className="text-gray-700">Multi-sig custody and SPV segregation</span>
+            </li>
+            <li className="flex items-start">
+              <div className="w-2 h-2 bg-indigo-600 rounded-full mt-3 mr-4 flex-shrink-0"></div>
+              <span className="text-gray-700">ERC-1400 transfer rules and whitelisted wallets</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       {/* Simple CTA */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
