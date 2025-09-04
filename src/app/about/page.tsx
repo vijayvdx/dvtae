@@ -1,20 +1,32 @@
-'use client'
+import type { Metadata } from 'next'
 
-import { useState, useEffect } from 'react'
+export const metadata: Metadata = {
+  title: 'About — DvTae',
+  description: 'Building the institutional rails for tokenized real-world assets with crypto-native distribution and compliant P2P liquidity.',
+  keywords: 'DvTae about, institutional rails, tokenized RWA, crypto-native distribution, P2P liquidity, mission, team',
+  openGraph: {
+    title: 'About — DvTae',
+    description: 'Building the institutional rails for tokenized real-world assets with crypto-native distribution and compliant P2P liquidity.',
+    url: 'https://dvtae.com/about',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About — DvTae',
+    description: 'Building the institutional rails for tokenized real-world assets with crypto-native distribution and compliant P2P liquidity.',
+  },
+  alternates: {
+    canonical: '/about',
+  },
+}
 
 export default function About() {
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    setIsVisible(true)
-  }, [])
-
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="pt-24 pb-20 px-6">
         <div className="max-w-7xl mx-auto text-center">
-          <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="transition-all duration-700 opacity-100 translate-y-0">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6">
               About DvTae
             </h1>

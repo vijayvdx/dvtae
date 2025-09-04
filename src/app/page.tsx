@@ -537,33 +537,33 @@ export default function HomePage() {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <article className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <article className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm" data-persona="investor">
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Investors</h3>
               <p className="text-gray-600 mb-6">Use crypto as collateral to access curated, tokenized opportunities—without selling.</p>
               <p className="mt-3">
-                <Link href="/waitlist" className="bg-transparent border border-gray-300 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-50 hover:border-gray-400 transition-colors">
+                <Link href="#waitlist" className="bg-transparent border border-gray-300 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-50 hover:border-gray-400 transition-colors">
                   Join waitlist
                 </Link>
               </p>
             </article>
             
-            <article className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <article className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm" data-persona="manager">
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Asset Managers</h3>
               <p className="text-gray-600 mb-6">Tokenize, distribute, and service your strategy on one platform.</p>
               <p className="mt-3">
-                <Link href="/for-managers#consult" className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors">
+                <a href="#consult" onClick={() => { if (typeof window !== 'undefined') { const openFn = (window as unknown as {openCalendly?: () => void}).openCalendly; if (openFn) openFn(); } return false; }} className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors">
                   Schedule a consultation
-                </Link>
+                </a>
               </p>
             </article>
             
-            <article className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <article className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm" data-persona="lender">
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Lenders</h3>
               <p className="text-gray-600 mb-6">Offer secured credit programs with automated LTV monitoring.</p>
               <p className="mt-3">
-                <Link href="/for-lenders#consult" className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors">
+                <a href="#consult" onClick={() => { if (typeof window !== 'undefined') { const openFn = (window as unknown as {openCalendly?: () => void}).openCalendly; if (openFn) openFn(); } return false; }} className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors">
                   Schedule a consultation
-                </Link>
+                </a>
               </p>
             </article>
           </div>
@@ -783,17 +783,148 @@ export default function HomePage() {
               Book a 30-minute session to scope tokenization, distribution, or lending.
             </p>
             <p className="mt-3">
-              <Link 
-                href="mailto:hello@dvtae.com?subject=Consultation%20request" 
+              <a 
+                href="#consult" 
+                onClick={() => { if (typeof window !== 'undefined') { const openFn = (window as unknown as {openCalendly?: () => void}).openCalendly; if (openFn) openFn(); } return false; }}
                 className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
               >
                 Schedule a consultation
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </Link>
+              </a>
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Waitlist Form */}
+      <section id="waitlist" className="py-20 px-6">
+        <div className="max-w-2xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Join the waitlist
+            </h2>
+            <p className="text-xl text-gray-600">
+              Be among the first to access tokenized investments when we launch.
+            </p>
+          </div>
+
+          <form id="waitlistForm" className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm" onSubmit={(e) => { e.preventDefault(); const submitFn = (window as unknown as {submitWaitlist?: (form: HTMLFormElement) => boolean}).submitWaitlist; if (submitFn) return submitFn(e.target as HTMLFormElement); return false; }}>
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Name
+                  <input 
+                    name="name" 
+                    type="text" 
+                    required 
+                    className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" 
+                  />
+                </label>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Email
+                  <input 
+                    name="email" 
+                    type="email" 
+                    required 
+                    className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" 
+                  />
+                </label>
+              </div>
+            </div>
+
+            <div className="mb-6">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                I&apos;m a(n)
+                <select 
+                  name="persona" 
+                  required 
+                  className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                >
+                  <option value="">Select…</option>
+                  <option>Investor</option>
+                  <option>Asset Manager</option>
+                  <option>Lender</option>
+                </select>
+              </label>
+            </div>
+
+            <div className="mb-6">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                What are you trying to do?
+                <textarea 
+                  name="intent" 
+                  maxLength={240} 
+                  rows={3} 
+                  placeholder="240 chars max"
+                  className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                ></textarea>
+              </label>
+            </div>
+
+            {/* Honeypot */}
+            <input 
+              name="company" 
+              autoComplete="off" 
+              tabIndex={-1} 
+              aria-hidden="true" 
+              style={{position: 'absolute', left: '-9999px'}} 
+            />
+
+            <div className="flex items-center justify-between">
+              <button 
+                className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-colors disabled:opacity-50" 
+                type="submit" 
+                id="wlBtn"
+              >
+                Join waitlist
+              </button>
+              <p id="wlMsg" className="text-sm text-gray-600" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+
+          <script dangerouslySetInnerHTML={{
+            __html: `
+            async function submitWaitlist(form) {
+              const btn = document.getElementById('wlBtn');
+              const msg = document.getElementById('wlMsg');
+              
+              // Bot trap
+              if (form.company.value) return false;
+              
+              btn.disabled = true;
+              msg.textContent = 'Submitting…';
+              
+              try {
+                const res = await fetch('https://script.google.com/macros/s/AKfycby_PLACEHOLDER_DEPLOYMENT_ID/exec', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({
+                    name: form.name.value.trim(),
+                    email: form.email.value.trim(),
+                    persona: form.persona.value,
+                    intent: form.intent.value.trim()
+                  })
+                });
+                
+                if (!res.ok) throw new Error('Bad response');
+                
+                msg.textContent = 'Thanks—check your inbox.';
+                window.dispatchEvent(new CustomEvent('waitlist_submit_success'));
+                form.reset();
+              } catch (e) {
+                msg.textContent = 'Something went wrong. Please email hello@dvtae.com.';
+              } finally { 
+                btn.disabled = false; 
+              }
+              
+              return false;
+            }
+            `
+          }} />
         </div>
       </section>
 

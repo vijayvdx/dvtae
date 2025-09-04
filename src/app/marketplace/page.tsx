@@ -4,6 +4,21 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Marketplace — DvTae',
   description: 'Discover tokenized strategies with transparent rules, clear fees, and peer-to-peer liquidity. Browse private credit, real estate, structured credit, and VC/PE investments.',
+  keywords: 'tokenized investments, private credit, real estate tokens, structured credit, VC PE, ERC-1400, P2P trading, DeFi marketplace',
+  openGraph: {
+    title: 'Marketplace — DvTae',
+    description: 'Discover tokenized strategies with transparent rules, clear fees, and peer-to-peer liquidity.',
+    url: 'https://dvtae.com/marketplace',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Marketplace — DvTae',
+    description: 'Discover tokenized strategies with transparent rules, clear fees, and peer-to-peer liquidity.',
+  },
+  alternates: {
+    canonical: '/marketplace',
+  },
 }
 
 export default function MarketplacePage() {

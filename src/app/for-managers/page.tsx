@@ -1,21 +1,33 @@
-'use client'
-
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'For Managers — DvTae',
+  description: 'Tokenize, distribute, and service your strategies on one platform. Compliant ERC-1400 tokens, streamlined KYC, crypto-native distribution, and AI-assisted marketplace.',
+  keywords: 'asset managers, tokenization, ERC-1400, KYC compliance, crypto distribution, AI price discovery, fund tokenization, RWA managers',
+  openGraph: {
+    title: 'For Managers — DvTae',
+    description: 'Tokenize, distribute, and service your strategies on one platform with compliant ERC-1400 tokens and crypto-native distribution.',
+    url: 'https://dvtae.com/for-managers',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'For Managers — DvTae',
+    description: 'Tokenize, distribute, and service your strategies on one platform with compliant ERC-1400 tokens and crypto-native distribution.',
+  },
+  alternates: {
+    canonical: '/for-managers',
+  },
+}
 
 export default function ForManagers() {
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    setIsVisible(true)
-  }, [])
-
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="pt-24 pb-20 px-6">
         <div className="max-w-7xl mx-auto text-center">
-          <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="transition-all duration-700 opacity-100 translate-y-0">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6">
               Tokenize, distribute, and service—on one platform
             </h1>

@@ -4,6 +4,21 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'How it works — DvTae',
   description: 'Connect, verify, and fund with crypto collateral or cash. Access tokenized investments with 70-100% leverage, ERC-1400 tokens, and P2P trading on a compliant marketplace.',
+  keywords: 'crypto collateral, tokenized RWA, ERC-1400, leverage, P2P trading, compliant marketplace, KYC, institutional rails',
+  openGraph: {
+    title: 'How it works — DvTae',
+    description: 'Connect, verify, and fund with crypto collateral or cash. Access tokenized investments with institutional-grade security.',
+    url: 'https://dvtae.com/how-it-works',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'How it works — DvTae',
+    description: 'Connect, verify, and fund with crypto collateral or cash. Access tokenized investments with institutional-grade security.',
+  },
+  alternates: {
+    canonical: '/how-it-works',
+  },
 }
 
 export default function HowItWorksPage() {

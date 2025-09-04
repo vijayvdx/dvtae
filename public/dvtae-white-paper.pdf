@@ -1,0 +1,137 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 4 0 R
+/F2 5 0 R
+>>
+>>
+/Contents 6 0 R
+>>
+endobj
+
+4 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Bold
+>>
+endobj
+
+5 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+
+6 0 obj
+<<
+/Length 1200
+>>
+stream
+BT
+/F1 24 Tf
+72 720 Td
+(DvTae White Paper) Tj
+0 -40 Td
+/F2 14 Tf
+(Institutional Rails for Tokenized Real-World Assets) Tj
+
+0 -60 Td
+/F1 16 Tf
+(Executive Summary) Tj
+0 -30 Td
+/F2 12 Tf
+(DvTae provides institutional-grade infrastructure for tokenized) Tj
+0 -15 Td
+(real-world assets, enabling crypto holders to access curated) Tj
+0 -15 Td
+(investment opportunities while maintaining crypto exposure.) Tj
+
+0 -40 Td
+/F1 16 Tf
+(Key Features) Tj
+0 -25 Td
+/F2 12 Tf
+(• ERC-1400 compliant security tokens with transfer restrictions) Tj
+0 -15 Td
+(• Multi-sig custody and oracle-driven risk controls) Tj
+0 -15 Td
+(• AI-assisted peer-to-peer marketplace with price discovery) Tj
+0 -15 Td
+(• Streamlined KYC/AML compliance and institutional onboarding) Tj
+0 -15 Td
+(• Crypto collateral lending with 70-100% leverage) Tj
+
+0 -40 Td
+/F1 16 Tf
+(Market Opportunity) Tj
+0 -25 Td
+/F2 12 Tf
+(The tokenized RWA market is projected to reach $10+ trillion) Tj
+0 -15 Td
+(by 2030, driven by institutional adoption and regulatory clarity.) Tj
+
+0 -40 Td
+/F1 16 Tf
+(Technology Stack) Tj
+0 -25 Td
+/F2 12 Tf
+(• Smart contracts on Ethereum with Layer 2 scaling) Tj
+0 -15 Td
+(• Oracle integration for real-time risk assessment) Tj
+0 -15 Td
+(• AI-powered pricing models and liquidity provision) Tj
+0 -15 Td
+(• Compliance-first architecture with regulatory reporting) Tj
+
+0 -40 Td
+/F2 10 Tf
+(This is a simplified white paper for demonstration purposes.) Tj
+0 -12 Td
+(For detailed technical specifications and regulatory framework,) Tj
+0 -12 Td
+(please contact the DvTae team for the full document.) Tj
+
+ET
+endstream
+endobj
+
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000262 00000 n 
+0000000334 00000 n 
+0000000402 00000 n 
+trailer
+<<
+/Size 7
+/Root 1 0 R
+>>
+startxref
+1653
+%%EOF
