@@ -68,26 +68,6 @@ export default function Header() {
               >
                 For Lenders
               </Link>
-              <Link 
-                href="/resources" 
-                className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
-                  isActive('/resources') 
-                    ? 'text-gray-900 bg-gray-50' 
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-                }`}
-              >
-                Resources
-              </Link>
-              <Link 
-                href="/about" 
-                className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
-                  isActive('/about') 
-                    ? 'text-gray-900 bg-gray-50' 
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-                }`}
-              >
-                About
-              </Link>
             </div>
 
             <div className="flex items-center space-x-3">
@@ -167,28 +147,6 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 For Lenders
-              </Link>
-              <Link 
-                href="/resources" 
-                className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
-                  isActive('/resources') 
-                    ? 'text-gray-900 bg-gray-50' 
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Resources
-              </Link>
-              <Link 
-                href="/about" 
-                className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
-                  isActive('/about') 
-                    ? 'text-gray-900 bg-gray-50' 
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About
               </Link>
             </div>
           </div>
