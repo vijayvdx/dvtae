@@ -44,9 +44,14 @@ export default function ForLenders() {
             </p>
 
             <div className="flex justify-center">
-              <Link href="#consult" className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-colors">
+              <a
+                href="https://calendly.com/vijay-8v/dvtae-consultation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-colors"
+              >
                 Schedule a consultation
-              </Link>
+              </a>
             </div>
           </div>
         </div>

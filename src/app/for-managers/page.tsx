@@ -31,9 +31,6 @@ export default function ForManagers() {
               >
                 Schedule a consultation
               </a>
-              <Link href="/for-managers/apply" className="bg-transparent border border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-50 hover:border-gray-400 transition-colors">
-                Apply to list
-              </Link>
             </div>
           </div>
         </div>

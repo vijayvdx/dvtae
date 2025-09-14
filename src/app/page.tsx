@@ -687,9 +687,14 @@ export default function HomePage() {
                 </div>
               </div>
               
-              <Link href="/for-managers/apply" className="btn btn-primary">
+              <a
+                href="https://calendly.com/vijay-8v/dvtae-consultation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary"
+              >
                 Apply to list your strategy
-              </Link>
+              </a>
             </div>
             
             <div className="bg-white rounded-2xl p-8 border border-gray-200">
