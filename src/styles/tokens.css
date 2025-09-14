@@ -1,0 +1,38 @@
+:root {
+  /* Neutrals */
+  --bg-000: #FFFFFF;
+  --bg-100: #F7F9FC;           /* cards/panels */
+  --ink-900: #0B1220;          /* headings */
+  --ink-700: #2A3646;          /* body */
+  --ink-500: #4E5A6A;          /* muted */
+  --line-200: #E7ECF2;         /* hairline */
+
+  /* Brand */
+  --brand-700: #1E5FCC;        /* hover/active */
+  --brand-600: #2F80ED;        /* links + primary CTA */
+  --brand-500: #4C8FF0;        /* subtle states */
+  --accent-teal-600: #2EDACF;  /* chips/tags + "MARKETS" */
+
+  /* Hero-only frosting (not for buttons) */
+  --brand-grad: linear-gradient(135deg, #2EDACF 0%, #6C63FF 100%);
+
+  /* Feedback */
+  --success-600: #12B76A;
+  --warning-600: #F79009;
+  --danger-600: #D92D20;
+
+  /* Radii, shadow, focus */
+  --radius-2: 10px;
+  --radius-3: 12px;
+  --shadow-1: 0 1px 2px rgb(16 24 40 / 6%);
+  --focus-ring: 0 0 0 3px rgba(47, 128, 237, 0.25);
+}
+
+/* Optional dark sections/footer */
+.theme-dark {
+  --bg-000: #0B1220;
+  --bg-100: #121A28;
+  --ink-900: #FFFFFF;
+  --ink-700: #D3DAE4;
+  --line-200: #1F2A3A;
+}

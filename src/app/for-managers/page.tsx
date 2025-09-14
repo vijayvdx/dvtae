@@ -9,15 +9,15 @@ export default function ForManagers() {
       <section className="pt-24 pb-20 px-6">
         <div className="max-w-7xl mx-auto text-center">
           <div className="transition-all duration-700 opacity-100 translate-y-0">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-ink-900 mb-6">
               Tokenize, distribute, and service—on one platform
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-600 mb-6 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-ink-700 mb-6 max-w-4xl mx-auto leading-relaxed">
               Bring your strategy on-chain with compliant ERC-1400 tokens, streamlined KYC, crypto-native distribution, and a marketplace with AI-assisted price discovery.
             </p>
             
-            <p className="text-sm text-gray-500 mb-12 max-w-3xl mx-auto">
+            <p className="text-sm text-ink-500 mb-12 max-w-3xl mx-auto">
               Investments are available to eligible investors and jurisdictions only. Availability and terms vary by offering.
             </p>
 
@@ -27,7 +27,7 @@ export default function ForManagers() {
                 href="https://calendly.com/vijay-8v/dvtae-consultation"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-colors"
+                className="btn-primary px-8 py-4 text-lg font-semibold"
               >
                 Schedule a consultation
               </a>
@@ -40,9 +40,9 @@ export default function ForManagers() {
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Tokenization-as-a-Service</h3>
-              <p className="text-gray-600">Issue compliant tokens with embedded transfer rules and cap-table control.</p>
+            <div className="card">
+              <h3 className="text-xl font-semibold text-ink-900 mb-3">Tokenization-as-a-Service</h3>
+              <p className="text-ink-700">Issue compliant tokens with embedded transfer rules and cap-table control.</p>
             </div>
             <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Crypto-native distribution</h3>

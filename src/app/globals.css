@@ -1,7 +1,10 @@
+@import '../styles/tokens.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Base typography - Circle/Stripe style */
 @layer base {
   html {
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
@@ -10,56 +13,113 @@
   body {
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
+
+  h1, h2, h3 { 
+    @apply text-ink-900; 
+  }
+  
+  p { 
+    @apply text-ink-700; 
+  }
+  
+  a { 
+    @apply text-brand-600 transition-colors; 
+  }
+  
+  a:hover { 
+    @apply text-brand-700; 
+  }
 }
 
 @layer components {
-  /* Simple custom components without problematic gap classes */
-  .btn {
-    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-lg font-medium text-sm transition-all duration-150 ease-in-out whitespace-nowrap;
-  }
-  
+  /* Buttons - Circle/Stripe style */
   .btn-primary {
-    @apply bg-indigo-600 text-white border-indigo-600 hover:bg-indigo-700 hover:border-indigo-700;
+    @apply bg-brand-600 text-white border-0 rounded-2 shadow-1 px-4 py-2 font-medium transition-colors;
   }
-  
+  .btn-primary:hover { 
+    @apply bg-brand-700; 
+  }
+
   .btn-secondary {
-    @apply bg-white text-gray-700 border-gray-300 hover:bg-gray-50 hover:border-gray-400 hover:text-gray-900;
+    @apply bg-bg-0 text-ink-700 border border-line-200 rounded-2 px-4 py-2 font-medium transition-colors;
   }
-  
+  .btn-secondary:hover { 
+    @apply bg-bg-100; 
+  }
+
   .btn-ghost {
-    @apply bg-transparent text-gray-600 border-transparent hover:bg-gray-50 hover:text-gray-900;
+    @apply bg-transparent text-ink-700 border-0 px-4 py-2 font-medium transition-colors;
   }
-  
-  .btn-lg {
-    @apply px-8 py-4 text-base;
+  .btn-ghost:hover { 
+    @apply bg-bg-100; 
   }
-  
+
+  /* Cards & surfaces */
   .card {
-    @apply bg-white border border-gray-200 rounded-xl p-8 transition-all duration-150 ease-in-out hover:border-gray-300 hover:shadow-sm;
+    @apply bg-bg-100 border border-line-200 rounded-3 p-6 transition-all duration-150 ease-out;
   }
-  
+  .card:hover {
+    @apply scale-[1.01];
+  }
+
   .step-card {
-    @apply relative bg-white border border-gray-200 rounded-xl p-8 transition-all duration-150 ease-in-out hover:border-gray-300 hover:shadow-sm;
+    @apply relative card;
   }
-  
+
   .step-number {
-    @apply absolute -top-3 left-8 w-6 h-6 bg-indigo-600 text-white rounded-full flex items-center justify-center text-sm font-semibold;
+    @apply absolute -top-3 left-6 w-6 h-6 bg-brand-600 text-white rounded-full flex items-center justify-center text-sm font-semibold;
   }
-  
+
+  /* Inputs */
+  .input {
+    @apply bg-white border border-line-200 rounded-2 px-3 py-2 text-ink-900 transition-all;
+    outline: none;
+  }
+  .input:focus {
+    box-shadow: var(--focus-ring);
+    border-color: var(--brand-600);
+  }
+
+  /* Badges / chips (use teal accent) */
+  .badge {
+    @apply font-semibold text-sm rounded-full px-2 py-1;
+    color: var(--accent-teal-600);
+    background: color-mix(in srgb, var(--accent-teal-600) 12%, transparent);
+  }
+
+  .hero-badge {
+    @apply badge px-4 py-2;
+  }
+
+  /* Header brand lockup (Circle-style) */
+  .brand { 
+    @apply inline-flex items-center gap-1.5; 
+  }      
+  .brand__icon, .brand__word { 
+    @apply block h-9 w-auto; 
+  }
+
+  @media (max-width: 1023px) {
+    .brand__icon, .brand__word { 
+      @apply h-8; 
+    }
+  }
+  @media (max-width: 767px) {
+    .brand { 
+      @apply gap-1; 
+    }
+    .brand__icon, .brand__word { 
+      @apply h-7; 
+    }
+  }
+
+  /* Safety items */
   .safety-item {
     @apply flex items-start;
   }
   
   .safety-icon {
-    @apply w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5 mr-3;
-  }
-  
-  .hero-badge {
-    @apply inline-flex items-center px-4 py-2 bg-indigo-50 border border-indigo-200 rounded-full text-sm text-indigo-700 font-medium;
-  }
-  
-  .badge {
-    @apply inline-flex items-center px-3 py-2 bg-gray-100 border border-gray-200 rounded-lg text-xs text-gray-700 font-medium;
+    @apply w-5 h-5 text-success-600 flex-shrink-0 mt-0.5 mr-3;
   }
 }
 

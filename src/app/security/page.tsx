@@ -27,12 +27,12 @@ export default function Security() {
       <section className="pt-24 pb-20 px-6">
         <div className="max-w-7xl mx-auto text-center">
           <div className="transition-all duration-700 opacity-100 translate-y-0">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-ink-900 mb-6">
               Institutional-grade{' '}
-              <span className="text-indigo-600">safeguards</span>
+              <span className="text-brand-600">safeguards</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-ink-700 mb-12 max-w-4xl mx-auto leading-relaxed">
               Multi-sig custody, oracle-driven risk controls, ERC-1400 transfer rules, and KYC/AML enforcement—designed for compliant, on-chain investing.
             </p>
 
@@ -49,13 +49,13 @@ export default function Security() {
       </section>
 
       {/* Security Architecture - 4 Card Grid */}
-      <section className="py-20 px-6 bg-gray-50">
+      <section className="py-20 px-6 bg-bg-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-ink-900 mb-6">
               Security architecture at a glance
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-ink-700 max-w-3xl mx-auto">
               Comprehensive protection across custody, risk management, compliance, and audit
             </p>
           </div>
@@ -67,10 +67,10 @@ export default function Security() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-ink-900 mb-4">
                 Custody
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-ink-700 leading-relaxed">
                 Institutional multi-sig wallets; named co-signers; crime/cyber policy on wallets.
               </p>
             </div>
@@ -334,7 +334,7 @@ export default function Security() {
       </section>
 
       {/* Compliance & Disclosures Footer */}
-      <section className="py-16 px-6 bg-indigo-600">
+      <section className="py-16 px-6 bg-brand-600">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">

@@ -112,10 +112,10 @@ function HowItWorksSection() {
     <section id="how" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-ink-900 mb-4">
             How it works
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-ink-700 max-w-2xl mx-auto">
             Three simple steps to access tokenized RWA (real-world assets) and start generating yield from your crypto holdings
           </p>
         </div>
@@ -138,8 +138,8 @@ function HowItWorksSection() {
                       <div className="flex-shrink-0 relative">
                         <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-200 ${
                           activeStep === step.id 
-                            ? 'bg-gray-900 text-white' 
-                            : 'bg-gray-100 text-gray-500 group-hover:bg-gray-200'
+                            ? 'bg-brand-600 text-white' 
+                            : 'bg-bg-100 text-ink-500 group-hover:bg-line-200'
                         }`}>
                           {step.id}
                         </div>
@@ -314,24 +314,24 @@ export default function HomePage() {
           <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
 
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6">
-              Generate yield from crypto <span className="text-indigo-600">without selling</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink-900 mb-6">
+              Generate yield from crypto <span className="text-brand-600">without selling</span>
             </h1>
             
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
+            <p className="text-xl text-ink-700 max-w-3xl mx-auto mb-8 leading-relaxed">
               Use your crypto as collateral to access curated investment opportunities. 
               KYC + wallet in minutes. Trade tokenized real-world assets on a compliant marketplace.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-3">
-              <Link href="/waitlist" className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-colors">
+              <Link href="/waitlist" className="btn-primary px-8 py-4 text-lg font-semibold">
                 Get Started
               </Link>
               <a
                 href="https://calendly.com/vijay-8v/dvtae-consultation"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-transparent border border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-50 hover:border-gray-400 transition-colors"
+                className="btn-secondary px-8 py-4 text-lg font-semibold"
               >
                 Schedule a consultation
               </a>
@@ -339,7 +339,7 @@ export default function HomePage() {
             
             <div className="mb-12"></div>
             
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-ink-500">
               Compliance-first • Institutional-grade • Built-in safeguards
             </p>
           </div>
@@ -738,7 +738,7 @@ export default function HomePage() {
                 Learn how real-world assets are converted into blockchain tokens, 
                 enabling fractional ownership and enhanced liquidity.
               </p>
-              <Link href="/learn/tokenized-assets" className="text-indigo-600 hover:text-indigo-700 font-medium">
+              <Link href="/learn/tokenized-assets" className="text-accent-teal hover:text-brand-600 font-medium">
                 Read more →
               </Link>
             </div>
@@ -751,7 +751,7 @@ export default function HomePage() {
                 Discover how this security token standard enables compliant 
                 trading with built-in regulatory controls.
               </p>
-              <Link href="/learn/erc-1400" className="text-indigo-600 hover:text-indigo-700 font-medium">
+              <Link href="/learn/erc-1400" className="text-accent-teal hover:text-brand-600 font-medium">
                 Read more →
               </Link>
             </div>
@@ -764,7 +764,7 @@ export default function HomePage() {
                 How to use your crypto holdings as collateral while maintaining 
                 upside exposure and generating additional yield.
               </p>
-              <Link href="/learn/crypto-collateral" className="text-indigo-600 hover:text-indigo-700 font-medium">
+              <Link href="/learn/crypto-collateral" className="text-accent-teal hover:text-brand-600 font-medium">
                 Read more →
               </Link>
             </div>
@@ -787,7 +787,7 @@ export default function HomePage() {
                 href="https://calendly.com/vijay-8v/dvtae-consultation"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                className="btn-secondary px-8 py-4 text-lg font-semibold inline-flex items-center gap-2"
               >
                 Schedule a consultation
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -820,7 +820,7 @@ export default function HomePage() {
                     name="name" 
                     type="text" 
                     required 
-                    className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" 
+                    className="input w-full" 
                   />
                 </label>
               </div>
@@ -831,7 +831,7 @@ export default function HomePage() {
                     name="email" 
                     type="email" 
                     required 
-                    className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" 
+                    className="input w-full" 
                   />
                 </label>
               </div>
@@ -877,7 +877,7 @@ export default function HomePage() {
 
             <div className="flex items-center justify-between">
               <button 
-                className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-colors disabled:opacity-50" 
+                className="btn-primary px-8 py-4 text-lg font-semibold disabled:opacity-50" 
                 type="submit" 
                 id="wlBtn"
               >
@@ -976,16 +976,16 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 bg-indigo-600">
+      <section className="py-20 px-6 bg-brand-600">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Ready to unlock yield from your crypto?
           </h2>
-          <p className="text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             Join the waitlist to be among the first to access tokenized real-world investments 
             using your crypto as collateral.
           </p>
-          <Link href="/waitlist" className="bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-50 transition-colors inline-flex items-center gap-2">
+          <Link href="/waitlist" className="bg-white text-brand-600 px-8 py-4 rounded-2 shadow-1 font-semibold text-lg hover:bg-bg-100 transition-colors inline-flex items-center gap-2">
             Join the waitlist
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
