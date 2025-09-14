@@ -59,6 +59,9 @@ export default function RootLayout({
         {/* Font optimization */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+
+        {/* Logo preload for LCP */}
+        <link rel="preload" as="image" href="/dvtae_hex_nodes_logo_pack/dvtae_header_lockup_36_iconforward.svg" type="image/svg+xml" />
         
         
         {/* Analytics - Plausible (privacy-first) */}

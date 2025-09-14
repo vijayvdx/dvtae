@@ -1,0 +1,38 @@
+/* Header height */
+.header { height: 72px; }
+
+/* Professional brand: icon full height, word block ~50% inside (baked into SVG) */
+.brand--professional {
+  display: inline-flex;
+  align-items: center;     /* vertical center vs icon */
+  gap: 6px;                /* tight, professional spacing */
+}
+
+/* Hex icon larger than word block */
+.brand__icon {
+  height: 56px;            /* desktop - hex icon much larger */
+  width: auto;
+  display: block;          /* avoid baseline gaps */
+}
+
+.brand__word {
+  height: 40px;            /* desktop - word block smaller */
+  width: auto;
+  display: block;          /* avoid baseline gaps */
+}
+
+/* Optional: micro nudge if needed for rendering */
+.brand__word { transform: translateY(0.5px); }
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .brand__icon { height: 48px; }
+  .brand__word { height: 36px; }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .brand__icon { height: 42px; }
+  .brand__word { height: 32px; }
+  .brand--professional { gap: 5px; }
+}

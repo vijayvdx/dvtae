@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
+import '../styles/brand.css'
 
 export default function Header() {
   const pathname = usePathname()
@@ -18,11 +19,9 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-6">
         <nav className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center space-x-3 font-semibold text-lg text-gray-900 hover:text-gray-700 transition-colors">
-            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-              D
-            </div>
-            <span>DvTae</span>
+          <Link href="/" className="brand brand--professional hover:opacity-80 transition-opacity" aria-label="DVTAE Home">
+            <img src="/dvtae_hex_nodes_logo_pack/dvtae_icon_hex-nodes_transparent.svg" alt="" className="brand__icon" />
+            <img src="/dvtae_hex_nodes_logo_pack/dvtae_wordblock_circstyle_36_fixed.svg" alt="DVTAE Markets" className="brand__word" />
           </Link>
 
           <div className="flex items-center space-x-8">

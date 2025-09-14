@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import '../styles/brand.css'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -9,14 +10,12 @@ export default function Footer() {
         <div className="grid md:grid-cols-5 gap-8">
           {/* Brand Section */}
           <div className="md:col-span-2">
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                D
-              </div>
-              <span className="font-semibold text-gray-900">DvTae</span>
-            </div>
+            <Link href="/" className="brand brand--professional hover:opacity-80 transition-opacity mb-4" aria-label="DVTAE Home">
+              <img src="/dvtae_hex_nodes_logo_pack/dvtae_icon_hex-nodes_transparent.svg" alt="" className="brand__icon" />
+              <img src="/dvtae_hex_nodes_logo_pack/dvtae_wordblock_circstyle_36_fixed.svg" alt="DVTAE Markets" className="brand__word" />
+            </Link>
             <p className="text-sm text-gray-600 mb-6 max-w-sm">
-              Institutional rails for tokenized real-world assets. Generate yield from crypto without selling.
+              Institutional rails for tokenized real-world assets with crypto-native distribution and compliant peer-to-peer (P2P) liquidity.
             </p>
             <p className="text-sm text-gray-500">
               © {currentYear} DvTae. All rights reserved.
@@ -27,11 +26,6 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-gray-900 mb-4">Product</h4>
             <ul className="space-y-3">
-              <li>
-                <Link href="/marketplace" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  Marketplace
-                </Link>
-              </li>
               <li>
                 <Link href="/how-it-works" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
                   How it works
@@ -55,24 +49,24 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Resources */}
+          {/* Get Started */}
           <div>
-            <h4 className="text-sm font-semibold text-gray-900 mb-4">Resources</h4>
+            <h4 className="text-sm font-semibold text-gray-900 mb-4">Get Started</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/resources" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  Resources
+                <Link href="/waitlist" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                  Join Waitlist
                 </Link>
               </li>
               <li>
-                <Link href="/resources/tokenization-white-paper.pdf" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  White Paper
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  About
-                </Link>
+                <a
+                  href="https://calendly.com/vijay-8v/dvtae-consultation"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  Schedule Consultation
+                </a>
               </li>
               <li>
                 <a href="mailto:hello@dvtae.com" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
@@ -82,36 +76,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Legal & Help */}
+          {/* Compliance */}
           <div>
-            <h4 className="text-sm font-semibold text-gray-900 mb-4">Legal & Help</h4>
-            <ul className="space-y-3">
-              <li>
-                <a href="/legal/terms" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  Terms of Service
-                </a>
-              </li>
-              <li>
-                <a href="/legal/privacy" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="/legal/risk" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  Risk Disclosure
-                </a>
-              </li>
-              <li>
-                <a href="mailto:support@dvtae.com" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  Support
-                </a>
-              </li>
-              <li>
-                <a href="https://status.dvtae.com" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  Status
-                </a>
-              </li>
-            </ul>
+            <h4 className="text-sm font-semibold text-gray-900 mb-4">Important</h4>
+            <p className="text-xs text-gray-500 leading-relaxed">
+              Information is for institutional / professional investors. Availability subject to eligibility and jurisdiction. Investing involves risk, including loss of principal. Nothing herein is investment advice.
+            </p>
           </div>
         </div>
       </div>

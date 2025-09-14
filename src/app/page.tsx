@@ -314,9 +314,8 @@ export default function HomePage() {
           <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
 
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6">
-              Generate yield from crypto{' '}
-              <span className="text-indigo-600">without selling</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6">
+              Generate yield from crypto <span className="text-indigo-600">without selling</span>
             </h1>
             
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
