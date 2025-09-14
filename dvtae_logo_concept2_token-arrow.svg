@@ -1,0 +1,8 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="48" fill="#FFFFFF"/>
+  <!-- Coin outline -->
+  <circle cx="256" cy="256" r="150" stroke="#0B1220" stroke-width="28" fill="none"/>
+  <!-- Up-right arrow -->
+  <path d="M192 320 L324 188" stroke="#2F80ED" stroke-width="36" stroke-linecap="round"/>
+  <path d="M268 184 L336 184 L336 252" stroke="#2F80ED" stroke-width="36" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

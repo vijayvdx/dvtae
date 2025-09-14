@@ -23,9 +23,10 @@ export default function ForManagers() {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="#consult" 
-                onClick={(e) => {e.preventDefault(); const w = window as typeof window & {openCalendly?: () => void}; w.openCalendly?.();}}
+              <a
+                href="https://calendly.com/vijay-8v/dvtae-consultation"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-colors"
               >
                 Schedule a consultation

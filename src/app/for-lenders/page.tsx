@@ -165,9 +165,10 @@ export default function ForLenders() {
               Book a 30-minute session with our team.
             </p>
             <p className="mt-3">
-              <a 
-                href="#consult" 
-                onClick={(e) => {e.preventDefault(); const w = window as typeof window & {openCalendly?: () => void}; w.openCalendly?.();}}
+              <a
+                href="https://calendly.com/vijay-8v/dvtae-consultation"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
               >
                 Schedule a consultation

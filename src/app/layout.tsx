@@ -60,9 +60,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         
-        {/* Calendly */}
-        <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
-        <script async src="https://assets.calendly.com/assets/external/widget.js"></script>
         
         {/* Analytics - Plausible (privacy-first) */}
         <script defer data-domain="dvtae.com" src="https://plausible.io/js/script.js"></script>
@@ -160,15 +157,6 @@ export default function RootLayout({
             });
           });
 
-          // Calendly popup helper
-          function openCalendly() {
-            if (window.Calendly) {
-              window.Calendly.initPopupWidget({
-                url: 'https://calendly.com/dvtae-consultation?hide_gdpr_banner=1'
-              });
-            }
-            return false;
-          }
           `
         }} />
 

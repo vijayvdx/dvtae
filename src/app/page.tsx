@@ -328,15 +328,13 @@ export default function HomePage() {
               <Link href="/waitlist" className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-colors">
                 Get Started
               </Link>
-              <Link href="#strategies" className="bg-transparent border border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-50 hover:border-gray-400 transition-colors">
-                Explore Marketplace
-              </Link>
-              <a 
-                href="#consult" 
-                onClick={(e) => {e.preventDefault(); const w = window as typeof window & {openCalendly?: () => void}; w.openCalendly?.();}}
-                className="text-gray-700 hover:text-gray-900 font-medium underline"
+              <a
+                href="https://calendly.com/vijay-8v/dvtae-consultation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-transparent border border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-50 hover:border-gray-400 transition-colors"
               >
-                Schedule a consultation →
+                Schedule a consultation
               </a>
             </div>
             
@@ -438,9 +436,6 @@ export default function HomePage() {
                   <span className="font-medium">Low–Med</span>
                 </div>
               </div>
-              <Link href="/marketplace/private-credit" className="btn btn-secondary w-full">
-                View details
-              </Link>
             </div>
             
             <div className="card">
@@ -462,9 +457,6 @@ export default function HomePage() {
                   <span className="font-medium">Med</span>
                 </div>
               </div>
-              <Link href="/marketplace/real-estate" className="btn btn-secondary w-full">
-                View details
-              </Link>
             </div>
             
             <div className="card">
@@ -486,9 +478,6 @@ export default function HomePage() {
                   <span className="font-medium">Med</span>
                 </div>
               </div>
-              <Link href="/marketplace/structured-credit" className="btn btn-secondary w-full">
-                View details
-              </Link>
             </div>
             
             <div className="card">
@@ -510,9 +499,6 @@ export default function HomePage() {
                   <span className="font-medium">High</span>
                 </div>
               </div>
-              <Link href="/marketplace/vc-pe" className="btn btn-secondary w-full">
-                View details
-              </Link>
             </div>
           </div>
           
@@ -552,8 +538,9 @@ export default function HomePage() {
               <p className="text-gray-600 mb-6">Tokenize, distribute, and service your strategy on one platform.</p>
               <p className="mt-3">
                 <a
-                  href="#consult"
-                  onClick={(e) => {e.preventDefault(); const w = window as typeof window & {openCalendly?: () => void}; w.openCalendly?.();}}
+                  href="https://calendly.com/vijay-8v/dvtae-consultation"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors"
                 >
                   Schedule a consultation
@@ -566,8 +553,9 @@ export default function HomePage() {
               <p className="text-gray-600 mb-6">Offer secured credit programs with automated LTV monitoring.</p>
               <p className="mt-3">
                 <a
-                  href="#consult"
-                  onClick={(e) => {e.preventDefault(); const w = window as typeof window & {openCalendly?: () => void}; w.openCalendly?.();}}
+                  href="https://calendly.com/vijay-8v/dvtae-consultation"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors"
                 >
                   Schedule a consultation
@@ -792,8 +780,9 @@ export default function HomePage() {
             </p>
             <p className="mt-3">
               <a 
-                href="#consult"
-                onClick={(e) => {e.preventDefault(); const w = window as typeof window & {openCalendly?: () => void}; w.openCalendly?.();}}
+                href="https://calendly.com/vijay-8v/dvtae-consultation"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
               >
                 Schedule a consultation

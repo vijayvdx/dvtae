@@ -71,9 +71,6 @@ export default function MarketplacePage() {
                   <span className="font-medium">Low–Med</span>
                 </div>
               </div>
-              <div className="text-indigo-600 font-medium text-sm group-hover:text-indigo-700">
-                View strategies →
-              </div>
             </Link>
             
             <Link href="/marketplace/real-estate" className="card hover:border-indigo-300 transition-colors group">
@@ -96,9 +93,6 @@ export default function MarketplacePage() {
                   <span>Risk:</span>
                   <span className="font-medium">Med</span>
                 </div>
-              </div>
-              <div className="text-indigo-600 font-medium text-sm group-hover:text-indigo-700">
-                View strategies →
               </div>
             </Link>
             
@@ -123,9 +117,6 @@ export default function MarketplacePage() {
                   <span className="font-medium">Med</span>
                 </div>
               </div>
-              <div className="text-indigo-600 font-medium text-sm group-hover:text-indigo-700">
-                View strategies →
-              </div>
             </Link>
             
             <Link href="/marketplace/vc-pe" className="card hover:border-indigo-300 transition-colors group">
@@ -148,9 +139,6 @@ export default function MarketplacePage() {
                   <span>Risk:</span>
                   <span className="font-medium">High</span>
                 </div>
-              </div>
-              <div className="text-indigo-600 font-medium text-sm group-hover:text-indigo-700">
-                View strategies →
               </div>
             </Link>
           </div>

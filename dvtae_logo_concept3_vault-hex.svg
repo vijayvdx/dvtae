@@ -1,0 +1,9 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="48" fill="#FFFFFF"/>
+  <!-- Hexagon -->
+  <path d="M256 96 L380 168 L380 312 L256 384 L132 312 L132 168 Z" fill="#0B1220"/>
+  <!-- Negative space D -->
+  <path d="M200 180 L248 180 Q320 206 320 256 Q320 306 248 332 L200 332 Z" fill="#FFFFFF"/>
+  <!-- Small inner notch for D thickness -->
+  <path d="M228 206 Q288 224 288 256 Q288 288 228 306 L228 206 Z" fill="#0B1220"/>
+</svg>
