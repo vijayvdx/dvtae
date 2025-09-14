@@ -32,7 +32,14 @@
 
 /* Mobile */
 @media (max-width: 767px) {
-  .brand__icon { height: 42px; }
-  .brand__word { height: 32px; }
-  .brand--professional { gap: 5px; }
+  .brand__icon { height: 36px; }
+  .brand__word { height: 28px; }
+  .brand--professional { gap: 4px; }
+}
+
+/* Extra small mobile */
+@media (max-width: 480px) {
+  .brand__icon { height: 32px; }
+  .brand__word { height: 24px; }
+  .brand--professional { gap: 3px; }
 }

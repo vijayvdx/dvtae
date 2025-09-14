@@ -74,17 +74,17 @@ export default function Header() {
                 href="https://calendly.com/vijay-8v/dvtae-consultation"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-transparent border border-gray-300 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-50 hover:border-gray-400 transition-colors cursor-pointer"
+                className="hidden md:inline-flex bg-transparent border border-gray-300 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-50 hover:border-gray-400 transition-colors cursor-pointer"
               >
                 Schedule a consultation
               </a>
-              <Link 
-                href="/waitlist" 
-                className="bg-indigo-600 text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors"
+              <Link
+                href="/waitlist"
+                className="hidden md:inline-flex bg-indigo-600 text-white px-6 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors"
               >
                 Join the waitlist
               </Link>
-              
+
               {/* Mobile menu button */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -103,11 +103,28 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-200">
             <div className="flex flex-col space-y-2">
-              <Link 
-                href="/how-it-works" 
+              <Link
+                href="/waitlist"
+                className="bg-indigo-600 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Join the waitlist
+              </Link>
+              <a
+                href="https://calendly.com/vijay-8v/dvtae-consultation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium px-3 py-2 rounded-lg transition-colors text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Schedule a consultation
+              </a>
+              <div className="border-t border-gray-200 my-2"></div>
+              <Link
+                href="/how-it-works"
                 className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
-                  isActive('/how-it-works') 
-                    ? 'text-gray-900 bg-gray-50' 
+                  isActive('/how-it-works')
+                    ? 'text-gray-900 bg-gray-50'
                     : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
